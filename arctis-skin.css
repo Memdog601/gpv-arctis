@@ -6,15 +6,15 @@
     width: 750px;
     height: 630px;
 
-    background:
-        url("https://memdog601.github.io/gpv-arctis/controller-art.png")
-        center center / 750px 630px no-repeat;
+    background-image: url("https://memdog601.github.io/gpv-arctis/controller-art.png");
+    background-repeat: no-repeat;
+    background-size: 830px 700px;
+    background-position: center 18px;
 
     filter:
         drop-shadow(0 0 8px #0d6bff)
         drop-shadow(0 0 20px rgba(13,107,255,.65));
 }
-
 /* Disconnect */
 .custom.disconnected div {
     display: none;
