@@ -3,13 +3,13 @@
    ========================================================= */
 
 :root {
-    --arctis-blue: #0d6bff;
-    --arctis-blue-bright: #3f8cff;
-    --arctis-cyan: #79c8ff;
+    --blue: #0d6bff;
+    --bright-blue: #3f8cff;
+    --cyan: #79c8ff;
 }
 
 /* =========================================================
-   CONTROLLER
+   CONTROLLER ART
    ========================================================= */
 
 .controller.custom {
@@ -28,13 +28,10 @@
         drop-shadow(0 0 20px rgba(13,107,255,.65));
 }
 
-/* =========================================================
-   DISCONNECTED
-   ========================================================= */
-
 .custom.disconnected div {
     display: none;
 }
+
 
 /* =========================================================
    TRIGGERS
@@ -43,10 +40,10 @@
 .custom .triggers {
     position: absolute;
 
-    width: 500px;
+    width: 465px;
     height: 115px;
 
-    left: 125px;
+    left: 115px;
     top: 0;
 
     z-index: 30 !important;
@@ -58,21 +55,21 @@
 
     opacity: 1;
 
-    border-radius: 50px 50px 20px 20px;
+    border-radius: 45px 45px 18px 18px;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(255,255,255,.95) 0%,
-            rgba(121,200,255,.95) 15%,
-            rgba(63,140,255,.90) 35%,
-            rgba(13,107,255,.70) 65%,
-            rgba(13,107,255,.10) 100%
+            rgba(255,255,255,.95),
+            rgba(121,200,255,.95) 18%,
+            rgba(63,140,255,.85) 45%,
+            rgba(13,107,255,.50) 72%,
+            transparent
         );
 
     filter:
-        drop-shadow(0 0 7px #ffffff)
-        drop-shadow(0 0 17px #0d6bff);
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px #0d6bff);
 }
 
 .custom .trigger[data-value="0"] {
@@ -87,6 +84,7 @@
     float: right;
 }
 
+
 /* =========================================================
    BUMPERS
    ========================================================= */
@@ -94,18 +92,18 @@
 .custom .bumpers {
     position: absolute;
 
-    width: 560px;
-    height: 68px;
+    width: 550px;
+    height: 55px;
 
-    left: 95px;
-    top: 115px;
+    left: 100px;
+    top: 93px;
 
     z-index: 25 !important;
 }
 
 .custom .bumper {
-    width: 180px;
-    height: 68px;
+    width: 165px;
+    height: 55px;
 
     opacity: 0;
 }
@@ -119,112 +117,139 @@
 }
 
 .custom .bumper.pressed {
-    opacity: .70;
+    opacity: .8;
 
     background:
         linear-gradient(
-            to bottom,
             rgba(255,255,255,.8),
             rgba(63,140,255,.8),
-            rgba(13,107,255,.5)
+            rgba(13,107,255,.35)
         );
 
     filter:
-        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff);
 }
 
-/* =========================================================
-   XBOX CENTER
-   ========================================================= */
-
-.custom .quadrant {
-    position: absolute;
-
-    width: 48px;
-    height: 48px;
-
-    top: 252px;
-    left: 356px;
-
-    opacity: 0 !important;
-    background: transparent !important;
-    filter: none !important;
-}
 
 /* =========================================================
-   VIEW / MENU
+   STICKS
+   Use full controller coordinates
    ========================================================= */
 
-.custom .arrows {
+.custom .sticks {
     position: absolute;
 
-    width: 150px;
-    height: 36px;
+    width: 750px;
+    height: 630px;
 
-    top: 260px;
-    left: 302px;
+    left: 0;
+    top: 0;
 
-    z-index: 20;
+    z-index: 20 !important;
 }
 
-.custom .back,
-.custom .start {
-    width: 36px;
-    height: 36px;
+.custom .stick {
+    position: absolute;
 
-    opacity: 0 !important;
-
-    background: transparent !important;
-    filter: none !important;
-}
-
-.custom .back {
-    float: left;
-}
-
-.custom .start {
-    float: right;
-}
-
-.custom .back.pressed,
-.custom .start.pressed {
-    opacity: .90 !important;
+    width: 86px;
+    height: 86px;
 
     border-radius: 50%;
+
+    /*
+       BRIGHTER ALL THE TIME.
+       This means stick movement is actually visible.
+    */
+    opacity: .92;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.28) 0%,
+            rgba(121,200,255,.35) 28%,
+            rgba(63,140,255,.38) 48%,
+            rgba(13,107,255,.60) 65%,
+            transparent 74%
+        );
+
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,.30),
+        inset 0 0 24px rgba(63,140,255,.50),
+        0 0 9px #3f8cff,
+        0 0 18px rgba(13,107,255,.70);
+
+    filter:
+        brightness(1.45)
+        drop-shadow(0 0 6px #79c8ff)
+        drop-shadow(0 0 13px #0d6bff);
+}
+
+
+/* LEFT STICK - aligned to artwork */
+
+.custom .stick.left {
+    left: 112px;
+    top: 166px;
+}
+
+
+/* RIGHT STICK - aligned to artwork */
+
+.custom .stick.right {
+    left: 405px;
+    top: 274px;
+}
+
+
+/* L3 / R3 CLICK */
+
+.custom .stick.pressed {
+    opacity: 1 !important;
 
     background:
         radial-gradient(
             circle,
             #ffffff 0%,
-            #79c8ff 20%,
-            #3f8cff 45%,
-            #0d6bff 72%,
-            transparent 75%
+            #ffffff 12%,
+            #bde7ff 22%,
+            #79c8ff 36%,
+            #3f8cff 54%,
+            #0d6bff 70%,
+            transparent 82%
         ) !important;
 
+    box-shadow:
+        inset 0 0 16px white,
+        inset 0 0 30px #3f8cff,
+        0 0 10px white,
+        0 0 22px #79c8ff,
+        0 0 38px #0d6bff !important;
+
     filter:
-        drop-shadow(0 0 8px #ffffff)
-        drop-shadow(0 0 18px #0d6bff) !important;
+        brightness(2.5)
+        saturate(1.5)
+        drop-shadow(0 0 10px white)
+        drop-shadow(0 0 18px #79c8ff)
+        drop-shadow(0 0 32px #0d6bff) !important;
 }
+
 
 /* =========================================================
    ABXY
-   MOVED UP TO MATCH ARTWORK
+   Full controller coordinate system
    ========================================================= */
 
 .custom .abxy {
     position: absolute;
 
-    width: 153px;
-    height: 156px;
+    width: 750px;
+    height: 630px;
 
-    /* was 184px */
-    top: 136px;
+    left: 0;
+    top: 0;
 
-    left: 505px;
-
-    z-index: 20;
+    z-index: 20 !important;
 }
 
 .custom .button {
@@ -235,158 +260,152 @@
 
     border-radius: 50%;
 
-    opacity: 0 !important;
+    opacity: 0;
 
-    background: transparent !important;
-    filter: none !important;
+    background: transparent;
 }
 
-/* A */
-.custom .a {
-    top: 108px;
-    left: 55px;
-}
-
-/* B */
-.custom .b {
-    top: 58px;
-    right: 0;
-}
-
-/* X */
-.custom .x {
-    top: 58px;
-    left: 4px;
-}
 
 /* Y */
+
 .custom .y {
-    top: 7px;
-    left: 55px;
+    left: 505px;
+    top: 144px;
 }
 
-/* PRESSED FACE BUTTON */
+
+/* X */
+
+.custom .x {
+    left: 458px;
+    top: 190px;
+}
+
+
+/* B */
+
+.custom .b {
+    left: 546px;
+    top: 190px;
+}
+
+
+/* A */
+
+.custom .a {
+    left: 502px;
+    top: 230px;
+}
+
+
+/* PRESSED ABXY */
+
 .custom .button.pressed {
-    opacity: .95 !important;
-
-    background:
-        radial-gradient(
-            circle,
-            #ffffff 0%,
-            #ffffff 8%,
-            #79c8ff 22%,
-            #3f8cff 45%,
-            #0d6bff 68%,
-            transparent 76%
-        ) !important;
-
-    filter:
-        brightness(1.35)
-        drop-shadow(0 0 6px #ffffff)
-        drop-shadow(0 0 12px #79c8ff)
-        drop-shadow(0 0 22px #0d6bff)
-        drop-shadow(0 0 34px rgba(13,107,255,.90)) !important;
-}
-
-/* =========================================================
-   STICKS
-   ========================================================= */
-
-.custom .sticks {
-    position: absolute;
-
-    width: 385px;
-    height: 210px;
-
-    top: 244px;
-    left: 132px;
-
-    z-index: 20;
-}
-
-/*
-   GPV moves these elements using inline transforms.
-   So keep the actual stick element visible.
-*/
-
-.custom .stick {
-    position: absolute;
-
-    width: 86px;
-    height: 86px;
-
-    border-radius: 50%;
-
-    opacity: .60;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.13) 0%,
-            rgba(121,200,255,.18) 25%,
-            rgba(63,140,255,.24) 48%,
-            rgba(13,107,255,.50) 65%,
-            transparent 73%
-        );
-
-    box-shadow:
-        inset 0 0 10px rgba(121,200,255,.35),
-        inset 0 0 20px rgba(13,107,255,.40),
-        0 0 8px rgba(13,107,255,.75);
-
-    filter:
-        brightness(1.20)
-        drop-shadow(0 0 5px rgba(121,200,255,.75))
-        drop-shadow(0 0 10px rgba(13,107,255,.70));
-}
-
-/* LEFT STICK */
-.custom .stick.left {
-    top: 6px;
-    left: 8px;
-}
-
-/* RIGHT STICK */
-.custom .stick.right {
-    top: 98px;
-    left: 286px;
-}
-
-/* =========================================================
-   L3 / R3 CLICK
-   ========================================================= */
-
-.custom .stick.pressed {
     opacity: 1 !important;
 
     background:
         radial-gradient(
             circle,
-            #ffffff 0%,
-            #ffffff 10%,
-            #bde7ff 18%,
-            #79c8ff 30%,
-            #3f8cff 50%,
-            #0d6bff 68%,
-            rgba(13,107,255,.30) 76%,
-            transparent 82%
+            white 0%,
+            white 10%,
+            #bde7ff 20%,
+            #79c8ff 35%,
+            #3f8cff 55%,
+            #0d6bff 72%,
+            transparent 80%
         ) !important;
 
     box-shadow:
-        inset 0 0 12px #ffffff,
-        inset 0 0 28px #3f8cff,
-        0 0 10px #ffffff,
-        0 0 20px #79c8ff,
-        0 0 34px #0d6bff !important;
+        inset 0 0 10px white,
+        0 0 8px white,
+        0 0 18px #79c8ff,
+        0 0 30px #0d6bff !important;
 
     filter:
-        brightness(2.2)
-        saturate(1.4)
-        drop-shadow(0 0 8px #ffffff)
-        drop-shadow(0 0 14px #79c8ff)
-        drop-shadow(0 0 26px #3f8cff)
-        drop-shadow(0 0 42px #0d6bff) !important;
+        brightness(1.8)
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px #0d6bff) !important;
 }
+
+
+/* =========================================================
+   XBOX CENTER BUTTON
+   ========================================================= */
+
+.custom .quadrant {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    left: 347px;
+    top: 123px;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   VIEW / MENU
+   ========================================================= */
+
+.custom .arrows {
+    position: absolute;
+
+    width: 750px;
+    height: 630px;
+
+    left: 0;
+    top: 0;
+
+    z-index: 20;
+}
+
+.custom .back,
+.custom .start {
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    opacity: 0;
+
+    border-radius: 50%;
+}
+
+.custom .back {
+    left: 272px;
+    top: 187px;
+}
+
+.custom .start {
+    left: 397px;
+    top: 187px;
+}
+
+.custom .back.pressed,
+.custom .start.pressed {
+    opacity: 1 !important;
+
+    background:
+        radial-gradient(
+            circle,
+            white,
+            #79c8ff 25%,
+            #3f8cff 50%,
+            #0d6bff 72%,
+            transparent 80%
+        ) !important;
+
+    filter:
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px #0d6bff);
+}
+
 
 /* =========================================================
    DPAD
@@ -398,8 +417,8 @@
     width: 110px;
     height: 111px;
 
-    top: 345px;
-    left: 223px;
+    left: 210px;
+    top: 300px;
 
     z-index: 20;
 }
@@ -409,7 +428,7 @@
 
     opacity: 0;
 
-    background: rgba(13,107,255,.80);
+    background: rgba(13,107,255,.85);
 }
 
 .custom .face.up {
@@ -445,31 +464,10 @@
 }
 
 .custom .face.pressed {
-    opacity: .85;
-
-    background:
-        radial-gradient(
-            circle,
-            #ffffff,
-            #3f8cff 35%,
-            #0d6bff 70%
-        );
+    opacity: .9;
 
     filter:
-        drop-shadow(0 0 7px #ffffff)
-        drop-shadow(0 0 17px #0d6bff);
-}
-
-/* =========================================================
-   LAYERS
-   ========================================================= */
-
-.custom .triggers,
-.custom .bumpers,
-.custom .quadrant,
-.custom .arrows,
-.custom .abxy,
-.custom .sticks,
-.custom .dpad {
-    z-index: 20 !important;
+        brightness(1.8)
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px #0d6bff);
 }
