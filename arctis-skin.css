@@ -1,142 +1,78 @@
 /* =========================================================
-   ARCTIS XBOX ONE - GPV EDIT SKIN
+   ARCTIS XBOX ONE SKIN
    ========================================================= */
 
 :root {
-    --arctis-blue: #0d6bff;
-    --arctis-blue-bright: #3f8cff;
-    --arctis-blue-deep: #001b55;
-    --arctis-black: #02040a;
+    --blue: #0d6bff;
 }
 
-/* Controller base */
-.controller.edit {
-    background:
-        url("https://memdog601.github.io/gpv-arctis/controller-art.png")
-        center / contain no-repeat !important;
+/* REPLACE STOCK XBOX SHELL */
+.controller.xbox.edit {
+    width: 750px !important;
+    height: 630px !important;
+
+    background-image:
+        url("https://memdog601.github.io/gpv-arctis/controller-art.png") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: 750px 630px !important;
 
     filter:
-        drop-shadow(0 0 8px rgba(13,107,255,.95))
-        drop-shadow(0 0 24px rgba(13,107,255,.55)) !important;
-
-    isolation: isolate;
+        drop-shadow(0 0 8px #0d6bff)
+        drop-shadow(0 0 20px rgba(13,107,255,.65)) !important;
 }
 
-/* Try to hide the stock Xbox shell while keeping inputs */
-.edit .controller-body,
-.edit .body,
-.edit .shell {
-    opacity: 0 !important;
-}
+/* =========================================================
+   INPUT GLOW
+   ========================================================= */
 
-/* Keep working GPV controls above our artwork */
-.edit .triggers,
-.edit .bumpers,
-.edit .quadrant,
-.edit .arrows,
-.edit .abxy,
-.edit .sticks,
-.edit .dpad,
-.edit .start,
-.edit .back {
-    position: relative;
-    z-index: 10 !important;
-}
-
-/* ABXY */
-.edit .abxy {
+.xbox.edit .stick {
     filter:
-        drop-shadow(0 0 5px rgba(13,107,255,.75))
-        drop-shadow(0 0 12px rgba(13,107,255,.40));
+        drop-shadow(0 0 5px #0d6bff)
+        drop-shadow(0 0 10px rgba(13,107,255,.7));
 }
 
-.edit .button {
-    transition: filter .08s ease, transform .08s ease;
-}
-
-.edit .button.pressed {
-    filter:
-        brightness(1.8)
-        saturate(1.4)
-        drop-shadow(0 0 8px #fff)
-        drop-shadow(0 0 14px var(--arctis-blue))
-        drop-shadow(0 0 24px var(--arctis-blue)) !important;
-
-    transform: scale(.95);
-}
-
-/* Sticks */
-.edit .stick {
-    filter:
-        brightness(.72)
-        contrast(1.25)
-        drop-shadow(0 0 5px var(--arctis-blue))
-        drop-shadow(0 0 12px rgba(13,107,255,.75));
-}
-
-.edit .stick.pressed {
-    filter:
-        brightness(1.45)
-        drop-shadow(0 0 8px #fff)
-        drop-shadow(0 0 14px var(--arctis-blue))
-        drop-shadow(0 0 24px var(--arctis-blue)) !important;
-}
-
-/* D-pad */
-.edit .dpad {
-    filter:
-        brightness(.72)
-        contrast(1.25)
-        drop-shadow(0 0 5px var(--arctis-blue))
-        drop-shadow(0 0 12px rgba(13,107,255,.65));
-}
-
-/* Bumpers */
-.edit .bumper {
-    filter:
-        brightness(.75)
-        drop-shadow(0 0 5px rgba(13,107,255,.75));
-}
-
-.edit .bumper.pressed {
-    filter:
-        brightness(1.7)
-        drop-shadow(0 0 10px #fff)
-        drop-shadow(0 0 18px var(--arctis-blue)) !important;
-}
-
-/* Triggers */
-.edit .trigger {
-    filter:
-        brightness(.75)
-        drop-shadow(0 0 5px rgba(13,107,255,.65));
-}
-
-.edit .trigger.pressed {
+.xbox.edit .stick.pressed {
     filter:
         brightness(1.6)
-        drop-shadow(0 0 10px #fff)
-        drop-shadow(0 0 18px var(--arctis-blue)) !important;
+        drop-shadow(0 0 10px #ffffff)
+        drop-shadow(0 0 18px #0d6bff) !important;
 }
 
-/* Xbox / center */
-.edit .quadrant {
+.xbox.edit .abxy {
     filter:
-        brightness(1.2)
-        drop-shadow(0 0 6px #fff)
-        drop-shadow(0 0 12px var(--arctis-blue));
+        drop-shadow(0 0 5px rgba(13,107,255,.8));
 }
 
-.edit .back,
-.edit .start {
+.xbox.edit .button.pressed {
     filter:
-        drop-shadow(0 0 4px var(--arctis-blue));
+        brightness(1.8)
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 16px #0d6bff) !important;
 }
 
-.edit .back.pressed,
-.edit .start.pressed {
+.xbox.edit .dpad {
     filter:
-        brightness(2)
-        drop-shadow(0 0 8px #fff)
-        drop-shadow(0 0 14px var(--arctis-blue));
+        drop-shadow(0 0 5px #0d6bff);
+}
+
+.xbox.edit .bumper,
+.xbox.edit .trigger {
+    filter:
+        drop-shadow(0 0 5px rgba(13,107,255,.8));
+}
+
+.xbox.edit .bumper.pressed,
+.xbox.edit .trigger.pressed {
+    filter:
+        brightness(1.7)
+        drop-shadow(0 0 10px white)
+        drop-shadow(0 0 18px #0d6bff) !important;
+}
+
+.xbox.edit .quadrant {
+    filter:
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 12px #0d6bff);
 }
