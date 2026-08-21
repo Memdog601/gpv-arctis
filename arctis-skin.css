@@ -1,41 +1,31 @@
 /* =========================================================
    ARCTIS XBOX ONE - GPV FULL CUSTOM SKIN
-   Black + Electric Blue
    ========================================================= */
 
 :root {
     --arctis-blue: #0d6bff;
     --arctis-blue-bright: #3f8cff;
-    --arctis-blue-deep: #001b55;
-    --arctis-black: #02040a;
 }
 
 /* =========================================================
-   CONTROLLER BASE
+   CONTROLLER
    ========================================================= */
 
 .controller.custom {
     width: 750px !important;
     height: 630px !important;
 
-    position: relative !important;
-
-    /*
-       GPV anchors custom controllers near the top.
-       Push the entire controller down.
-    */
-    margin: 175px auto 0 auto !important;
-
     background-image:
         url("https://memdog601.github.io/gpv-arctis/controller-art.png") !important;
 
     background-repeat: no-repeat !important;
-
-    /*
-       Artwork sizing
-    */
     background-size: 760px auto !important;
     background-position: center 12px !important;
+
+    position: relative !important;
+
+    /* Move entire controller down without changing GPV layout */
+    transform: translateY(300px) !important;
 
     filter:
         drop-shadow(0 0 8px #0d6bff)
@@ -58,14 +48,11 @@
 
 .custom .triggers {
     position: absolute;
-
     width: 470px;
     height: 125px;
 
     left: 140px;
     top: 4px;
-
-    z-index: 20;
 }
 
 .custom .trigger {
@@ -94,7 +81,7 @@
         );
 
     filter:
-        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff);
 }
 
@@ -110,8 +97,6 @@
 
     left: 95px;
     top: 118px;
-
-    z-index: 20;
 }
 
 .custom .bumper {
@@ -132,16 +117,15 @@
 .custom .bumper.pressed {
     opacity: .55;
 
-    background:
-        rgba(13,107,255,.75);
+    background: rgba(13,107,255,.75);
 
     filter:
-        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff);
 }
 
 /* =========================================================
-   XBOX CENTER BUTTON
+   XBOX BUTTON
    ========================================================= */
 
 .custom .quadrant {
@@ -153,13 +137,10 @@
     top: 252px;
     left: 356px;
 
-    border-radius: 50%;
-
     opacity: 0 !important;
+
     background: transparent !important;
     filter: none !important;
-
-    z-index: 20;
 }
 
 /* =========================================================
@@ -174,8 +155,6 @@
 
     top: 260px;
     left: 302px;
-
-    z-index: 20;
 }
 
 .custom .back,
@@ -206,13 +185,13 @@
     background:
         radial-gradient(
             circle,
-            #ffffff 0%,
-            #3f8cff 35%,
+            white,
+            #3f8cff 40%,
             #0d6bff 70%
         ) !important;
 
     filter:
-        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 8px white)
         drop-shadow(0 0 16px #0d6bff) !important;
 }
 
@@ -228,8 +207,6 @@
 
     top: 184px;
     left: 505px;
-
-    z-index: 20;
 }
 
 .custom .button {
@@ -244,11 +221,6 @@
 
     background: transparent !important;
     filter: none !important;
-
-    transition:
-        opacity .08s ease,
-        filter .08s ease,
-        transform .08s ease;
 }
 
 .custom .a {
@@ -277,18 +249,16 @@
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.95) 0%,
-            rgba(63,140,255,.90) 35%,
-            rgba(13,107,255,.70) 65%,
+            white 0%,
+            #3f8cff 35%,
+            #0d6bff 65%,
             transparent 72%
         ) !important;
 
     filter:
-        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff)
-        drop-shadow(0 0 28px rgba(13,107,255,.80)) !important;
-
-    transform: scale(.95);
+        drop-shadow(0 0 28px rgba(13,107,255,.8)) !important;
 }
 
 /* =========================================================
@@ -303,8 +273,6 @@
 
     top: 244px;
     left: 132px;
-
-    z-index: 20;
 }
 
 .custom .stick {
@@ -319,40 +287,34 @@
 
     background: transparent !important;
     filter: none !important;
-
-    transition:
-        opacity .08s ease,
-        filter .08s ease,
-        transform .08s ease;
 }
 
-/* LEFT STICK */
+/* LEFT */
 .custom .stick.left {
     top: 6px;
     left: 8px;
 }
 
-/* RIGHT STICK */
+/* RIGHT */
 .custom .stick.right {
     top: 98px;
     left: 286px;
 }
 
-/* Stick click */
 .custom .stick.pressed {
     opacity: .75 !important;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.18) 0%,
+            rgba(255,255,255,.18),
             rgba(63,140,255,.40) 45%,
             rgba(13,107,255,.50) 65%,
             transparent 75%
         ) !important;
 
     filter:
-        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff)
         drop-shadow(0 0 28px rgba(13,107,255,.80)) !important;
 }
@@ -369,8 +331,6 @@
 
     top: 345px;
     left: 223px;
-
-    z-index: 20;
 }
 
 .custom .face {
@@ -378,15 +338,9 @@
 
     opacity: 0;
 
-    background:
-        rgba(13,107,255,.70);
-
-    transition:
-        opacity .08s ease,
-        filter .08s ease;
+    background: rgba(13,107,255,.70);
 }
 
-/* UP */
 .custom .face.up {
     width: 38px;
     height: 52px;
@@ -395,7 +349,6 @@
     top: 0;
 }
 
-/* DOWN */
 .custom .face.down {
     width: 38px;
     height: 52px;
@@ -404,7 +357,6 @@
     bottom: 0;
 }
 
-/* LEFT */
 .custom .face.left {
     width: 52px;
     height: 38px;
@@ -413,7 +365,6 @@
     top: 36px;
 }
 
-/* RIGHT */
 .custom .face.right {
     width: 52px;
     height: 38px;
@@ -423,16 +374,15 @@
 }
 
 .custom .face.pressed {
-    opacity: .70;
+    opacity: .7;
 
     filter:
-        drop-shadow(0 0 8px #ffffff)
-        drop-shadow(0 0 16px #0d6bff)
-        drop-shadow(0 0 24px rgba(13,107,255,.80));
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 16px #0d6bff);
 }
 
 /* =========================================================
-   FORCE INPUT LAYERS ABOVE ARTWORK
+   LAYERS
    ========================================================= */
 
 .custom .triggers,
