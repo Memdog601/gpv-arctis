@@ -54,11 +54,11 @@
     background:
         linear-gradient(
             to bottom,
-            rgba(255,255,255,.90),
+            rgba(255,255,255,.90) 0%,
             rgba(121,200,255,.90) 15%,
             rgba(63,140,255,.80) 38%,
             rgba(13,107,255,.55) 68%,
-            transparent
+            transparent 100%
         );
 
     filter:
@@ -135,17 +135,20 @@
 
 .custom .stick {
     position: absolute !important;
+
     width: 72px !important;
     height: 72px !important;
+
     border-radius: 50% !important;
     opacity: .88 !important;
 
-    border: 2px solid rgba(121,200,255,.80) !important;
+    border:
+        2px solid rgba(121,200,255,.80) !important;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.22),
+            rgba(255,255,255,.22) 0%,
             rgba(121,200,255,.24) 25%,
             rgba(63,140,255,.30) 50%,
             rgba(13,107,255,.46) 68%,
@@ -177,12 +180,14 @@
 
 .custom .stick.pressed {
     opacity: 1 !important;
-    border: 3px solid #ffffff !important;
+
+    border:
+        3px solid #ffffff !important;
 
     background:
         radial-gradient(
             circle,
-            #ffffff,
+            #ffffff 0%,
             #dff5ff 10%,
             #79c8ff 24%,
             #3f8cff 45%,
@@ -199,7 +204,7 @@
 }
 
 /* =========================================================
-   ABXY
+   ABXY - EXACT PAINT COORDINATES
    ========================================================= */
 
 .custom .abxy {
@@ -211,36 +216,43 @@
     z-index: 40 !important;
 }
 
-.custom .abxy .button {
+.custom .button {
     position: absolute !important;
+
     width: 44px !important;
     height: 44px !important;
+
     border-radius: 50% !important;
+
     opacity: 0 !important;
     background: transparent !important;
 }
 
-.custom .abxy .y {
+/* Y */
+.custom .y {
     left: 551px !important;
     top: 159px !important;
 }
 
-.custom .abxy .x {
+/* X */
+.custom .x {
     left: 500px !important;
     top: 209px !important;
 }
 
-.custom .abxy .b {
+/* B */
+.custom .b {
     left: 596px !important;
     top: 209px !important;
 }
 
-.custom .abxy .a {
+/* A */
+.custom .a {
     left: 548px !important;
     top: 258px !important;
 }
 
-.custom .abxy .button.pressed {
+.custom .button.pressed {
     opacity: 1 !important;
 
     border:
@@ -249,7 +261,7 @@
     background:
         radial-gradient(
             circle,
-            #ffffff,
+            #ffffff 0%,
             #cdeeff 12%,
             #79c8ff 28%,
             #3f8cff 50%,
@@ -271,26 +283,38 @@
 
 /* =========================================================
    VIEW / MENU
-   Adjusted UP + LEFT
+   Exact Paint centers:
+   Back  = 595,423
+   Start = 849,422
    ========================================================= */
 
 .custom .arrows {
     position: absolute !important;
 
-    width: 135px !important;
-    height: 28px !important;
+    /* Covers both physical middle buttons */
+    width: 169px !important;
+    height: 36px !important;
 
-    left: 292px !important;
-    top: 214px !important;
+    left: 289px !important;
+    top: 216px !important;
+
+    z-index: 50 !important;
 }
 
 .custom .back,
 .custom .start {
-    width: 28px !important;
-    height: 28px !important;
+    width: 36px !important;
+    height: 36px !important;
 
-    opacity: 0 !important;
-    border-radius: 50%;
+    border-radius: 50% !important;
+
+    opacity: 0;
+
+    background: transparent !important;
+
+    margin: 0 !important;
+
+    position: static !important;
 }
 
 .custom .back {
@@ -305,25 +329,36 @@
 .custom .start.pressed {
     opacity: 1 !important;
 
-    background: radial-gradient(
-        circle,
-        #fff,
-        #79c8ff 30%,
-        #3f8cff 55%,
-        #0d6bff 75%
-    ) !important;
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #ffffff 10%,
+            #79c8ff 28%,
+            #3f8cff 52%,
+            #0d6bff 76%,
+            transparent 82%
+        ) !important;
+
+    box-shadow:
+        inset 0 0 7px white,
+        0 0 6px white,
+        0 0 13px #79c8ff,
+        0 0 22px #0d6bff !important;
 
     filter:
-        drop-shadow(0 0 6px #fff)
-        drop-shadow(0 0 14px #0d6bff);
+        brightness(1.5)
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 14px #0d6bff) !important;
 }
 
 /* =========================================================
-   XBOX CENTER
+   XBOX CENTER BUTTON
    ========================================================= */
 
 .custom .quadrant {
     position: absolute;
+
     width: 55px;
     height: 55px;
 
@@ -331,7 +366,9 @@
     top: 144px;
 
     border-radius: 50%;
+
     opacity: 0;
+
     z-index: 20;
 }
 
@@ -341,6 +378,7 @@
 
 .custom .dpad {
     position: absolute;
+
     width: 110px;
     height: 111px;
 
@@ -352,13 +390,17 @@
 
 .custom .face {
     position: absolute;
+
     opacity: 0;
-    background: rgba(13,107,255,.85);
+
+    background:
+        rgba(13,107,255,.85);
 }
 
 .custom .face.up {
     width: 38px;
     height: 52px;
+
     left: 36px;
     top: 0;
 }
@@ -366,6 +408,7 @@
 .custom .face.down {
     width: 38px;
     height: 52px;
+
     left: 36px;
     bottom: 0;
 }
@@ -373,6 +416,7 @@
 .custom .face.left {
     width: 52px;
     height: 38px;
+
     left: 0;
     top: 36px;
 }
@@ -380,6 +424,7 @@
 .custom .face.right {
     width: 52px;
     height: 38px;
+
     right: 0;
     top: 36px;
 }
