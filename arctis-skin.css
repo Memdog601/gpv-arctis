@@ -43,42 +43,53 @@
 
 .custom .triggers {
     position: absolute;
-
     width: 470px;
     height: 125px;
 
     left: 140px;
-    top: 4px;
+    top: 0;
+
+    z-index: 30 !important;
 }
 
 .custom .trigger {
-    width: 94px;
+    position: absolute;
+
+    width: 100px;
     height: 125px;
 
+    top: 0;
+
     opacity: 0;
-}
-
-.custom .trigger.left {
-    float: left;
-}
-
-.custom .trigger.right {
-    float: right;
-}
-
-.custom .trigger.pressed {
-    opacity: .55;
+    border-radius: 28px 28px 12px 12px;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(63,140,255,.85),
-            rgba(13,107,255,.30)
+            rgba(255,255,255,.95) 0%,
+            rgba(63,140,255,.95) 20%,
+            rgba(13,107,255,.75) 60%,
+            rgba(13,107,255,.15) 100%
         );
 
     filter:
         drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff);
+}
+
+.custom .trigger.left {
+    left: 0;
+}
+
+.custom .trigger.right {
+    right: 0;
+}
+
+/* GPV may use pressed OR active */
+.custom .trigger.pressed,
+.custom .trigger.active,
+.custom .trigger[data-pressed="true"] {
+    opacity: .85 !important;
 }
 
 /* =========================================================
