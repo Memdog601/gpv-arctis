@@ -1,168 +1,441 @@
-/*
- * ARCTIS Xbox One - Gamepad Viewer
- * Black + Electric Blue
- * Designed for GPV editcss=
- */
+/* =========================================================
+   ARCTIS XBOX ONE - GPV EDIT SKIN
+   Black + Electric Blue
+   ========================================================= */
 
 :root {
-    --arctis-blue: #246BFD;
-    --arctis-bright: #4D8DFF;
-    --arctis-dark: #05070c;
+    --arctis-blue: #0d6bff;
+    --arctis-blue-bright: #3f8cff;
+    --arctis-blue-deep: #001b55;
+    --arctis-black: #02040a;
 }
 
-/* ================================
-   WHOLE CONTROLLER
-   ================================ */
+/* =========================================================
+   CONTROLLER BASE
+   ========================================================= */
 
 .controller.edit {
     filter:
-        brightness(0.72)
-        contrast(1.35)
-        drop-shadow(0 0 5px #246BFD)
-        drop-shadow(0 0 14px rgba(36,107,253,.60)) !important;
+        drop-shadow(0 0 8px rgba(13,107,255,.95))
+        drop-shadow(0 0 24px rgba(13,107,255,.55));
+
+    isolation: isolate;
 }
 
-/* ================================
-   ARCTIS LOGO
-   ================================ */
+/* =========================================================
+   ARTWORK LAYER
+   ========================================================= */
 
-.controller.edit::after {
+.controller.edit::before {
     content: "";
     position: absolute;
 
-    width: 105px;
-    height: 105px;
+    left: 0;
+    top: 0;
+
+    width: 750px;
+    height: 630px;
+
+    pointer-events: none;
+    z-index: 1;
+
+    /* approximate Xbox controller silhouette */
+    clip-path: polygon(
+        16% 22%,
+        24% 14%,
+        33% 15%,
+        40% 22%,
+        60% 22%,
+        67% 15%,
+        76% 14%,
+        84% 22%,
+        91% 37%,
+        96% 57%,
+        98% 72%,
+        97% 83%,
+        93% 91%,
+        88% 95%,
+        83% 91%,
+        71% 78%,
+        63% 70%,
+        37% 70%,
+        29% 78%,
+        17% 91%,
+        12% 95%,
+        7% 91%,
+        3% 83%,
+        2% 72%,
+        4% 57%,
+        9% 37%
+    );
+
+    -webkit-clip-path: polygon(
+        16% 22%,
+        24% 14%,
+        33% 15%,
+        40% 22%,
+        60% 22%,
+        67% 15%,
+        76% 14%,
+        84% 22%,
+        91% 37%,
+        96% 57%,
+        98% 72%,
+        97% 83%,
+        93% 91%,
+        88% 95%,
+        83% 91%,
+        71% 78%,
+        63% 70%,
+        37% 70%,
+        29% 78%,
+        17% 91%,
+        12% 95%,
+        7% 91%,
+        3% 83%,
+        2% 72%,
+        4% 57%,
+        9% 37%
+    );
+
+    background:
+
+        /* center blue glow */
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(13,107,255,.40) 0%,
+            rgba(13,107,255,.16) 18%,
+            transparent 40%
+        ),
+
+        /* left claw streak */
+        linear-gradient(
+            118deg,
+            transparent 0 43%,
+            rgba(20,110,255,.95) 44% 45%,
+            transparent 46% 100%
+        ),
+
+        linear-gradient(
+            118deg,
+            transparent 0 48%,
+            rgba(20,110,255,.70) 49% 50%,
+            transparent 51% 100%
+        ),
+
+        linear-gradient(
+            118deg,
+            transparent 0 53%,
+            rgba(20,110,255,.50) 54% 55%,
+            transparent 56% 100%
+        ),
+
+        /* right claw streak */
+        linear-gradient(
+            62deg,
+            transparent 0 43%,
+            rgba(20,110,255,.95) 44% 45%,
+            transparent 46% 100%
+        ),
+
+        linear-gradient(
+            62deg,
+            transparent 0 48%,
+            rgba(20,110,255,.70) 49% 50%,
+            transparent 51% 100%
+        ),
+
+        linear-gradient(
+            62deg,
+            transparent 0 53%,
+            rgba(20,110,255,.50) 54% 55%,
+            transparent 56% 100%
+        ),
+
+        /* diagonal tech lines */
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 16px,
+            rgba(13,107,255,.20) 17px 19px,
+            transparent 20px 34px
+        ),
+
+        /* honeycomb-like mesh */
+        repeating-linear-gradient(
+            60deg,
+            rgba(13,107,255,.18) 0 1px,
+            transparent 1px 20px
+        ),
+
+        repeating-linear-gradient(
+            -60deg,
+            rgba(13,107,255,.18) 0 1px,
+            transparent 1px 20px
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(13,107,255,.10) 0 1px,
+            transparent 1px 20px
+        ),
+
+        /* grunge dots */
+        radial-gradient(
+            circle at 15% 55%,
+            rgba(13,107,255,.55) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 83% 62%,
+            rgba(13,107,255,.55) 0 2px,
+            transparent 3px
+        ),
+
+        /* base shading */
+        linear-gradient(
+            145deg,
+            rgba(4,6,13,.20) 0%,
+            rgba(0,20,75,.30) 45%,
+            rgba(0,0,0,.12) 100%
+        );
+
+    background-size:
+        auto,
+        220px 380px,
+        220px 380px,
+        220px 380px,
+        220px 380px,
+        220px 380px,
+        220px 380px,
+        auto,
+        42px 36px,
+        42px 36px,
+        42px 36px,
+        28px 28px,
+        34px 34px,
+        auto;
+
+    background-position:
+        center,
+        6% 52%,
+        9% 55%,
+        12% 58%,
+        94% 52%,
+        91% 55%,
+        88% 58%,
+        center,
+        left bottom,
+        left bottom,
+        left bottom,
+        left center,
+        right center,
+        center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        repeat,
+        repeat,
+        repeat,
+        repeat,
+        repeat,
+        repeat,
+        no-repeat;
+
+    opacity: .92;
+
+    mix-blend-mode: screen;
+}
+
+/* =========================================================
+   ARCTIS LOGO
+   ========================================================= */
+
+.controller.edit::after {
+    content: "";
+
+    position: absolute;
+
+    width: 135px;
+    height: 135px;
 
     left: 50%;
-    top: 54%;
+    top: 55%;
 
     transform: translate(-50%, -50%);
 
-    background-image:
-        url("https://memdog601.github.io/gpv-arctis/arctis-logo.png");
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background:
+        url("https://memdog601.github.io/gpv-arctis/arctis-logo.png")
+        center / contain no-repeat;
 
     pointer-events: none;
+    z-index: 3;
 
     filter:
-        drop-shadow(0 0 3px #246BFD)
-        drop-shadow(0 0 9px #246BFD);
-
-    z-index: 50;
+        drop-shadow(0 0 3px #ffffff)
+        drop-shadow(0 0 7px var(--arctis-blue))
+        drop-shadow(0 0 16px rgba(13,107,255,.95));
 }
 
-/* ================================
-   ABXY
-   ================================ */
+/* =========================================================
+   KEEP CONTROLS ABOVE ARTWORK
+   ========================================================= */
 
-.edit .abxy .button {
+.edit .triggers,
+.edit .bumpers,
+.edit .quadrant,
+.edit .arrows,
+.edit .abxy,
+.edit .sticks,
+.edit .dpad {
+    z-index: 5 !important;
+}
+
+/* =========================================================
+   ABXY BUTTONS
+   ========================================================= */
+
+.edit .abxy {
     filter:
-        brightness(.8)
-        saturate(2)
-        drop-shadow(0 0 3px #246BFD) !important;
+        drop-shadow(0 0 5px rgba(13,107,255,.75))
+        drop-shadow(0 0 12px rgba(13,107,255,.40));
 }
 
-.edit .abxy .button.pressed {
+.edit .button {
+    filter:
+        brightness(.95)
+        saturate(1.15)
+        drop-shadow(0 0 3px rgba(13,107,255,.65));
+
+    transition:
+        filter .08s ease,
+        transform .08s ease;
+}
+
+.edit .button.pressed {
     filter:
         brightness(1.8)
-        saturate(4)
-        drop-shadow(0 0 6px #246BFD)
-        drop-shadow(0 0 12px #246BFD) !important;
+        saturate(1.4)
+        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 14px var(--arctis-blue))
+        drop-shadow(0 0 24px var(--arctis-blue)) !important;
+
+    transform: scale(.95);
 }
 
-/* ================================
+/* =========================================================
    ANALOG STICKS
-   ================================ */
+   ========================================================= */
 
 .edit .stick {
     filter:
-        brightness(.65)
-        saturate(2)
-        drop-shadow(0 0 4px #246BFD) !important;
+        brightness(.72)
+        contrast(1.25)
+        drop-shadow(0 0 5px var(--arctis-blue))
+        drop-shadow(0 0 12px rgba(13,107,255,.75));
 
-    border-radius: 50%;
+    transition:
+        filter .08s ease,
+        transform .08s ease;
 }
 
 .edit .stick.pressed {
     filter:
-        brightness(1.5)
-        saturate(4)
-        drop-shadow(0 0 7px #246BFD)
-        drop-shadow(0 0 12px #246BFD) !important;
+        brightness(1.45)
+        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 14px var(--arctis-blue))
+        drop-shadow(0 0 24px var(--arctis-blue)) !important;
 }
 
-/* ================================
+/* =========================================================
    DPAD
-   ================================ */
+   ========================================================= */
 
 .edit .dpad {
     filter:
-        brightness(.70)
-        saturate(2)
-        drop-shadow(0 0 4px #246BFD) !important;
+        brightness(.72)
+        contrast(1.25)
+        drop-shadow(0 0 5px var(--arctis-blue))
+        drop-shadow(0 0 12px rgba(13,107,255,.65));
 }
 
-.edit .dpad .pressed {
+.edit .face.pressed {
     filter:
-        brightness(1.7)
-        saturate(4)
-        drop-shadow(0 0 8px #246BFD) !important;
+        brightness(1.8)
+        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 16px var(--arctis-blue)) !important;
 }
 
-/* ================================
+/* =========================================================
    BUMPERS
-   ================================ */
+   ========================================================= */
 
 .edit .bumper {
     filter:
-        brightness(.65)
-        saturate(2)
-        drop-shadow(0 0 3px #246BFD) !important;
+        brightness(.75)
+        drop-shadow(0 0 5px rgba(13,107,255,.75));
 }
 
 .edit .bumper.pressed {
     filter:
-        brightness(1.6)
-        saturate(4)
-        drop-shadow(0 0 9px #246BFD) !important;
+        brightness(1.7)
+        drop-shadow(0 0 10px #ffffff)
+        drop-shadow(0 0 18px var(--arctis-blue)) !important;
 }
 
-/* ================================
+/* =========================================================
    TRIGGERS
-   ================================ */
+   ========================================================= */
 
 .edit .trigger {
     filter:
-        brightness(.70)
-        saturate(2)
-        drop-shadow(0 0 4px #246BFD) !important;
+        brightness(.75)
+        drop-shadow(0 0 5px rgba(13,107,255,.65));
 }
 
 .edit .trigger.pressed {
     filter:
-        brightness(1.7)
-        saturate(4)
-        drop-shadow(0 0 9px #246BFD) !important;
+        brightness(1.6)
+        drop-shadow(0 0 10px #ffffff)
+        drop-shadow(0 0 18px var(--arctis-blue)) !important;
 }
 
-/* ================================
-   START / SELECT
-   ================================ */
+/* =========================================================
+   XBOX / CENTER CONTROLS
+   ========================================================= */
 
-.edit .start,
-.edit .back {
+.edit .quadrant {
     filter:
-        brightness(.75)
-        saturate(2)
-        drop-shadow(0 0 3px #246BFD) !important;
+        brightness(1.2)
+        drop-shadow(0 0 6px #ffffff)
+        drop-shadow(0 0 12px var(--arctis-blue));
 }
 
-.edit .start.pressed,
-.edit .back.pressed {
+.edit .back,
+.edit .start {
     filter:
-        brightness(1.7)
-        drop-shadow(0 0 8px #246BFD) !important;
+        drop-shadow(0 0 4px var(--arctis-blue));
+}
+
+.edit .back.pressed,
+.edit .start.pressed {
+    filter:
+        brightness(2)
+        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 14px var(--arctis-blue));
+}
+
+/* =========================================================
+   DISCONNECTED
+   ========================================================= */
+
+.controller.edit.disconnected::before,
+.controller.edit.disconnected::after {
+    display: none;
 }
