@@ -59,16 +59,16 @@
     background:
         linear-gradient(
             to bottom,
-            rgba(255,255,255,.95) 0%,
-            rgba(121,200,255,.95) 15%,
-            rgba(63,140,255,.90) 35%,
-            rgba(13,107,255,.70) 65%,
-            rgba(13,107,255,.10) 100%
+            rgba(255,255,255,.90) 0%,
+            rgba(121,200,255,.90) 15%,
+            rgba(63,140,255,.80) 38%,
+            rgba(13,107,255,.55) 68%,
+            transparent 100%
         );
 
     filter:
-        drop-shadow(0 0 7px white)
-        drop-shadow(0 0 17px #0d6bff);
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 15px #0d6bff);
 }
 
 .custom .trigger[data-value="0"] {
@@ -90,18 +90,18 @@
 .custom .bumpers {
     position: absolute;
 
-    width: 560px;
-    height: 68px;
+    width: 550px;
+    height: 55px;
 
-    left: 95px;
-    top: 115px;
+    left: 100px;
+    top: 105px;
 
     z-index: 25 !important;
 }
 
 .custom .bumper {
-    width: 180px;
-    height: 68px;
+    width: 165px;
+    height: 55px;
 
     opacity: 0;
 }
@@ -119,20 +119,18 @@
 
     background:
         linear-gradient(
-            to bottom,
-            rgba(255,255,255,.85),
-            rgba(63,140,255,.85),
-            rgba(13,107,255,.45)
+            rgba(255,255,255,.75),
+            rgba(63,140,255,.75),
+            rgba(13,107,255,.35)
         );
 
     filter:
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff);
+        drop-shadow(0 0 7px white)
+        drop-shadow(0 0 15px #0d6bff);
 }
 
 /* =========================================================
    ANALOG STICKS
-   Repositioned directly from controller-art.png
    ========================================================= */
 
 .custom .sticks {
@@ -150,94 +148,96 @@
 .custom .stick {
     position: absolute !important;
 
-    width: 86px !important;
-    height: 86px !important;
+    /*
+       Smaller than before so the glow stays
+       inside the artwork's stick ring.
+    */
+    width: 72px !important;
+    height: 72px !important;
 
     border-radius: 50% !important;
 
-    /*
-       Keep bright because GPV does NOT use .pressed
-       for normal analog stick movement.
-    */
-    opacity: 1 !important;
+    opacity: .88 !important;
 
-    border: 4px solid rgba(121,200,255,.95) !important;
+    border:
+        2px solid rgba(121,200,255,.80) !important;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.38) 0%,
-            rgba(121,200,255,.36) 25%,
-            rgba(63,140,255,.35) 48%,
-            rgba(13,107,255,.58) 66%,
-            rgba(13,107,255,.18) 72%,
-            transparent 77%
+            rgba(255,255,255,.22) 0%,
+            rgba(121,200,255,.24) 25%,
+            rgba(63,140,255,.30) 50%,
+            rgba(13,107,255,.46) 68%,
+            transparent 76%
         ) !important;
 
     box-shadow:
-        inset 0 0 10px rgba(255,255,255,.55),
-        inset 0 0 24px rgba(63,140,255,.70),
-        0 0 8px #ffffff,
-        0 0 16px #79c8ff,
-        0 0 26px #0d6bff !important;
+        inset 0 0 8px rgba(255,255,255,.25),
+        inset 0 0 18px rgba(63,140,255,.45),
+        0 0 6px #79c8ff,
+        0 0 12px rgba(13,107,255,.85) !important;
 
     filter:
-        brightness(1.65)
-        saturate(1.3)
-        drop-shadow(0 0 6px #ffffff)
-        drop-shadow(0 0 12px #79c8ff)
-        drop-shadow(0 0 20px #0d6bff) !important;
+        brightness(1.45)
+        saturate(1.25)
+        drop-shadow(0 0 5px #79c8ff)
+        drop-shadow(0 0 10px #0d6bff) !important;
 }
 
-/* LEFT STICK */
+/*
+   Re-centered after changing stick overlay
+   from 86px -> 72px.
+*/
+
 .custom .stick.left {
-    left: 128px !important;
-    top: 190px !important;
+    left: 135px !important;
+    top: 197px !important;
 }
 
-/* RIGHT STICK */
 .custom .stick.right {
-    left: 445px !important;
-    top: 306px !important;
+    left: 452px !important;
+    top: 313px !important;
 }
 
-/* L3 / R3 CLICK */
+/* =========================================================
+   L3 / R3 CLICK
+   ========================================================= */
+
 .custom .stick.pressed {
     opacity: 1 !important;
 
     border:
-        5px solid #ffffff !important;
+        3px solid #ffffff !important;
 
     background:
         radial-gradient(
             circle,
             #ffffff 0%,
-            #ffffff 12%,
-            #d8f2ff 22%,
-            #79c8ff 38%,
-            #3f8cff 56%,
-            #0d6bff 72%,
-            transparent 82%
+            #dff5ff 10%,
+            #79c8ff 24%,
+            #3f8cff 45%,
+            #0d6bff 67%,
+            transparent 78%
         ) !important;
 
     box-shadow:
-        inset 0 0 16px #ffffff,
-        inset 0 0 30px #3f8cff,
-        0 0 12px #ffffff,
-        0 0 24px #79c8ff,
-        0 0 42px #0d6bff !important;
+        inset 0 0 10px white,
+        inset 0 0 20px #3f8cff,
+        0 0 7px white,
+        0 0 14px #79c8ff,
+        0 0 24px #0d6bff !important;
 
     filter:
-        brightness(2.5)
-        saturate(1.5)
-        drop-shadow(0 0 10px #ffffff)
-        drop-shadow(0 0 20px #79c8ff)
-        drop-shadow(0 0 34px #0d6bff) !important;
+        brightness(1.8)
+        saturate(1.4)
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 12px #79c8ff)
+        drop-shadow(0 0 20px #0d6bff) !important;
 }
 
 /* =========================================================
    ABXY
-   Repositioned directly from controller-art.png
    ========================================================= */
 
 .custom .abxy {
@@ -255,8 +255,12 @@
 .custom .button {
     position: absolute !important;
 
-    width: 48px !important;
-    height: 48px !important;
+    /*
+       Slightly smaller so pressed glow matches
+       the printed circles more closely.
+    */
+    width: 42px !important;
+    height: 42px !important;
 
     border-radius: 50% !important;
 
@@ -267,57 +271,59 @@
 
 /* Y */
 .custom .y {
-    left: 551px !important;
-    top: 158px !important;
+    left: 529px !important;
+    top: 148px !important;
 }
 
 /* X */
 .custom .x {
-    left: 500px !important;
-    top: 209px !important;
+    left: 482px !important;
+    top: 197px !important;
 }
 
 /* B */
 .custom .b {
-    left: 594px !important;
-    top: 208px !important;
+    left: 572px !important;
+    top: 197px !important;
 }
 
 /* A */
 .custom .a {
-    left: 546px !important;
-    top: 255px !important;
+    left: 527px !important;
+    top: 242px !important;
 }
 
-/* ABXY PRESSED */
+/* =========================================================
+   ABXY PRESSED
+   ========================================================= */
+
 .custom .button.pressed {
     opacity: 1 !important;
 
     border:
-        3px solid rgba(255,255,255,.95) !important;
+        2px solid rgba(255,255,255,.95) !important;
 
     background:
         radial-gradient(
             circle,
             #ffffff 0%,
-            #ffffff 10%,
-            #bde7ff 23%,
-            #79c8ff 38%,
-            #3f8cff 56%,
-            #0d6bff 72%,
-            transparent 80%
+            #cdeeff 12%,
+            #79c8ff 28%,
+            #3f8cff 50%,
+            #0d6bff 70%,
+            transparent 79%
         ) !important;
 
     box-shadow:
-        inset 0 0 10px #ffffff,
-        0 0 8px #ffffff,
-        0 0 18px #79c8ff,
-        0 0 30px #0d6bff !important;
+        inset 0 0 8px white,
+        0 0 6px white,
+        0 0 13px #79c8ff,
+        0 0 22px #0d6bff !important;
 
     filter:
-        brightness(1.9)
-        drop-shadow(0 0 8px #ffffff)
-        drop-shadow(0 0 18px #0d6bff) !important;
+        brightness(1.6)
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 14px #0d6bff) !important;
 }
 
 /* =========================================================
@@ -360,8 +366,8 @@
 .custom .start {
     position: absolute;
 
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
 
     opacity: 0;
 
@@ -369,13 +375,13 @@
 }
 
 .custom .back {
-    left: 272px;
-    top: 187px;
+    left: 276px;
+    top: 190px;
 }
 
 .custom .start {
-    left: 397px;
-    top: 187px;
+    left: 396px;
+    top: 190px;
 }
 
 .custom .back.pressed,
@@ -393,8 +399,8 @@
         ) !important;
 
     filter:
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff);
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 14px #0d6bff);
 }
 
 /* =========================================================
@@ -467,7 +473,7 @@
         );
 
     filter:
-        brightness(1.8)
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff);
+        brightness(1.6)
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 14px #0d6bff);
 }
