@@ -1,36 +1,62 @@
 /* =========================================================
    ARCTIS XBOX ONE - GPV FULL CUSTOM SKIN
+   Black + Electric Blue
+   ========================================================= */
+
+:root {
+    --arctis-blue: #0d6bff;
+    --arctis-blue-bright: #3f8cff;
+    --arctis-blue-deep: #001b55;
+    --arctis-black: #02040a;
+}
+
+/* =========================================================
+   CONTROLLER BASE
    ========================================================= */
 
 .controller.custom {
     width: 750px;
     height: 630px;
 
-    background-image: url("https://memdog601.github.io/gpv-arctis/controller-art.png");
-    background-repeat: no-repeat;
+    background-image:
+        url("https://memdog601.github.io/gpv-arctis/controller-art.png");
 
+    background-repeat: no-repeat;
     background-size: 760px auto;
     background-position: center 12px;
 
     filter:
         drop-shadow(0 0 8px #0d6bff)
         drop-shadow(0 0 20px rgba(13,107,255,.65));
+
+    position: relative;
 }
+
+/* =========================================================
+   DISCONNECTED
+   ========================================================= */
+
+.custom.disconnected div {
+    display: none;
+}
+
 /* =========================================================
    TRIGGERS
    ========================================================= */
 
 .custom .triggers {
-    width: 446px;
-    height: 121px;
+    width: 470px;
+    height: 125px;
+
     position: absolute;
-    left: 152px;
-    top: 0;
+    left: 140px;
+    top: 4px;
 }
 
 .custom .trigger {
-    width: 88px;
-    height: 121px;
+    width: 94px;
+    height: 125px;
+
     opacity: 0;
 }
 
@@ -44,8 +70,17 @@
 
 .custom .trigger.pressed {
     opacity: .55;
-    background: #0d6bff;
-    filter: drop-shadow(0 0 15px #0d6bff);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(63,140,255,.85),
+            rgba(13,107,255,.3)
+        );
+
+    filter:
+        drop-shadow(0 0 8px #ffffff)
+        drop-shadow(0 0 18px #0d6bff);
 }
 
 /* =========================================================
@@ -54,15 +89,18 @@
 
 .custom .bumpers {
     position: absolute;
-    width: 536px;
-    height: 61px;
-    left: 107px;
-    top: 129px;
+
+    width: 560px;
+    height: 68px;
+
+    left: 95px;
+    top: 118px;
 }
 
 .custom .bumper {
-    width: 170px;
-    height: 61px;
+    width: 180px;
+    height: 68px;
+
     opacity: 0;
 }
 
@@ -76,26 +114,39 @@
 
 .custom .bumper.pressed {
     opacity: .55;
-    background: #0d6bff;
-    filter: drop-shadow(0 0 15px #0d6bff);
+
+    background: rgba(13,107,255,.75);
+
+    filter:
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px #0d6bff);
 }
 
 /* =========================================================
-   XBOX CENTER
+   XBOX CENTER BUTTON
    ========================================================= */
 
 .custom .quadrant {
     position: absolute;
-    width: 45px;
-    height: 45px;
-    top: 258px;
-    left: 354px;
+
+    width: 48px;
+    height: 48px;
+
+    top: 252px;
+    left: 356px;
 
     border-radius: 50%;
-    background: rgba(13,107,255,.18);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.15),
+            rgba(13,107,255,.20) 60%,
+            transparent 70%
+        );
 
     filter:
-        drop-shadow(0 0 5px #fff)
+        drop-shadow(0 0 5px white)
         drop-shadow(0 0 10px #0d6bff);
 }
 
@@ -105,16 +156,19 @@
 
 .custom .arrows {
     position: absolute;
-    width: 141px;
-    height: 33px;
-    top: 264px;
-    left: 306px;
+
+    width: 150px;
+    height: 36px;
+
+    top: 260px;
+    left: 302px;
 }
 
 .custom .back,
 .custom .start {
-    width: 33px;
-    height: 33px;
+    width: 36px;
+    height: 36px;
+
     opacity: 0;
 }
 
@@ -128,13 +182,21 @@
 
 .custom .back.pressed,
 .custom .start.pressed {
-    opacity: .75;
+    opacity: .8;
+
     border-radius: 50%;
-    background: #0d6bff;
+
+    background:
+        radial-gradient(
+            circle,
+            white 0%,
+            #3f8cff 35%,
+            #0d6bff 70%
+        );
 
     filter:
         drop-shadow(0 0 8px white)
-        drop-shadow(0 0 15px #0d6bff);
+        drop-shadow(0 0 16px #0d6bff);
 }
 
 /* =========================================================
@@ -143,18 +205,27 @@
 
 .custom .abxy {
     position: absolute;
+
     width: 153px;
     height: 156px;
+
     top: 192px;
     left: 488px;
 }
 
 .custom .button {
     position: absolute;
+
     width: 48px;
     height: 48px;
+
     border-radius: 50%;
     opacity: 0;
+
+    transition:
+        opacity .08s ease,
+        filter .08s ease,
+        transform .08s ease;
 }
 
 .custom .a {
@@ -178,7 +249,7 @@
 }
 
 .custom .button.pressed {
-    opacity: .8;
+    opacity: .85;
 
     background:
         radial-gradient(
@@ -186,12 +257,15 @@
             white 0%,
             #3f8cff 35%,
             #0d6bff 65%,
-            transparent 70%
+            transparent 72%
         );
 
     filter:
         drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff);
+        drop-shadow(0 0 18px #0d6bff)
+        drop-shadow(0 0 28px rgba(13,107,255,.8));
+
+    transform: scale(.95);
 }
 
 /* =========================================================
@@ -200,45 +274,55 @@
 
 .custom .sticks {
     position: absolute;
-    width: 371px;
-    height: 196px;
-    top: 239px;
-    left: 144px;
+
+    width: 385px;
+    height: 210px;
+
+    top: 248px;
+    left: 132px;
 }
 
 .custom .stick {
     position: absolute;
-    width: 83px;
-    height: 83px;
+
+    width: 86px;
+    height: 86px;
+
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(13,107,255,.05) 45%,
-            rgba(13,107,255,.45) 63%,
-            transparent 70%
+            rgba(13,107,255,.05) 40%,
+            rgba(13,107,255,.40) 62%,
+            transparent 72%
         );
 
     filter:
-        drop-shadow(0 0 7px #0d6bff);
+        drop-shadow(0 0 7px #0d6bff)
+        drop-shadow(0 0 14px rgba(13,107,255,.65));
+
+    transition:
+        filter .08s ease,
+        transform .08s ease;
 }
 
 .custom .stick.left {
-    top: 0;
-    left: 0;
+    top: 6px;
+    left: 8px;
 }
 
 .custom .stick.right {
-    top: 113px;
-    left: 288px;
+    top: 104px;
+    left: 296px;
 }
 
 .custom .stick.pressed {
     filter:
         brightness(1.7)
         drop-shadow(0 0 10px white)
-        drop-shadow(0 0 20px #0d6bff);
+        drop-shadow(0 0 20px #0d6bff)
+        drop-shadow(0 0 30px rgba(13,107,255,.85));
 }
 
 /* =========================================================
@@ -247,21 +331,31 @@
 
 .custom .dpad {
     position: absolute;
+
     width: 110px;
     height: 111px;
+
     top: 345px;
     left: 223px;
 }
 
 .custom .face {
     position: absolute;
+
     opacity: 0;
-    background: #0d6bff;
+
+    background:
+        rgba(13,107,255,.7);
+
+    transition:
+        opacity .08s ease,
+        filter .08s ease;
 }
 
 .custom .face.up {
     width: 38px;
     height: 52px;
+
     left: 36px;
     top: 0;
 }
@@ -269,6 +363,7 @@
 .custom .face.down {
     width: 38px;
     height: 52px;
+
     left: 36px;
     bottom: 0;
 }
@@ -276,6 +371,7 @@
 .custom .face.left {
     width: 52px;
     height: 38px;
+
     left: 0;
     top: 36px;
 }
@@ -283,14 +379,28 @@
 .custom .face.right {
     width: 52px;
     height: 38px;
+
     right: 0;
     top: 36px;
 }
 
 .custom .face.pressed {
-    opacity: .6;
+    opacity: .7;
 
     filter:
         drop-shadow(0 0 8px white)
-        drop-shadow(0 0 16px #0d6bff);
+        drop-shadow(0 0 16px #0d6bff)
+        drop-shadow(0 0 24px rgba(13,107,255,.8));
+}
+
+/* =========================================================
+   EXTRA GLOW
+   ========================================================= */
+
+.custom .sticks,
+.custom .abxy,
+.custom .dpad,
+.custom .quadrant,
+.custom .arrows {
+    z-index: 10;
 }
