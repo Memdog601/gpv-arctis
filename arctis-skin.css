@@ -135,12 +135,15 @@
 
 .custom .stick {
     position: absolute !important;
+
     width: 72px !important;
     height: 72px !important;
+
     border-radius: 50% !important;
     opacity: .88 !important;
 
-    border: 2px solid rgba(121,200,255,.80) !important;
+    border:
+        2px solid rgba(121,200,255,.80) !important;
 
     background:
         radial-gradient(
@@ -175,13 +178,11 @@
     top: 313px !important;
 }
 
-/* =========================================================
-   L3 / R3 CLICK
-   ========================================================= */
-
 .custom .stick.pressed {
     opacity: 1 !important;
-    border: 3px solid #ffffff !important;
+
+    border:
+        3px solid #ffffff !important;
 
     background:
         radial-gradient(
@@ -200,18 +201,10 @@
         0 0 7px white,
         0 0 14px #79c8ff,
         0 0 24px #0d6bff !important;
-
-    filter:
-        brightness(1.8)
-        saturate(1.4)
-        drop-shadow(0 0 6px white)
-        drop-shadow(0 0 12px #79c8ff)
-        drop-shadow(0 0 20px #0d6bff) !important;
 }
 
 /* =========================================================
-   ABXY
-   FIXED ALIGNMENT
+   ABXY - EXACT PAINT COORDINATES
    ========================================================= */
 
 .custom .abxy {
@@ -225,40 +218,45 @@
 
 .custom .button {
     position: absolute !important;
+
     width: 44px !important;
     height: 44px !important;
+
     border-radius: 50% !important;
+
     opacity: 0 !important;
     background: transparent !important;
 }
 
-.custom .x {
-    left: 500px !important;
-    top: 209px !important;
-}
-
-.custom .a {
-    left: 548px !important;
-    top: 258px !important;
-}
-
-.custom .b {
-    left: 596px !important;
-    top: 209px !important;
-}
-
+/* Y */
 .custom .y {
     left: 551px !important;
     top: 159px !important;
 }
 
-/* =========================================================
-   ABXY PRESSED
-   ========================================================= */
+/* X */
+.custom .x {
+    left: 500px !important;
+    top: 209px !important;
+}
+
+/* B */
+.custom .b {
+    left: 596px !important;
+    top: 209px !important;
+}
+
+/* A */
+.custom .a {
+    left: 548px !important;
+    top: 258px !important;
+}
 
 .custom .button.pressed {
     opacity: 1 !important;
-    border: 2px solid rgba(255,255,255,.95) !important;
+
+    border:
+        2px solid rgba(255,255,255,.95) !important;
 
     background:
         radial-gradient(
@@ -284,61 +282,52 @@
 }
 
 /* =========================================================
-   XBOX CENTER BUTTON
-   ========================================================= */
-
-.custom .quadrant {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    left: 347px;
-    top: 144px;
-    border-radius: 50%;
-    opacity: 0;
-    z-index: 20;
-}
-
-/* =========================================================
    VIEW / MENU
+   Exact Paint centers:
+   Back  = 595,423
+   Start = 849,422
    ========================================================= */
 
 .custom .arrows {
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: 0;
-    top: 0;
-    z-index: 20 !important;
+    position: absolute !important;
+
+    /* Covers both physical middle buttons */
+    width: 169px !important;
+    height: 36px !important;
+
+    left: 289px !important;
+    top: 216px !important;
+
+    z-index: 50 !important;
 }
 
 .custom .back,
 .custom .start {
-    position: absolute;
-    width: 36px;
-    height: 36px;
+    width: 36px !important;
+    height: 36px !important;
 
-    opacity: 0 !important;
+    border-radius: 50% !important;
+
+    opacity: 0;
+
     background: transparent !important;
-    filter: none !important;
-    float: none !important;
-    border-radius: 50%;
+
+    margin: 0 !important;
+
+    position: static !important;
 }
 
-/* Back / View */
 .custom .back {
-    left: 289px !important;
-    top: 216px !important;
+    float: left !important;
 }
 
-/* Start / Menu */
 .custom .start {
-    left: 423px !important;
-    top: 215px !important;
+    float: right !important;
 }
 
 .custom .back.pressed,
 .custom .start.pressed {
-    opacity: .95 !important;
+    opacity: 1 !important;
 
     background:
         radial-gradient(
@@ -351,11 +340,36 @@
             transparent 82%
         ) !important;
 
+    box-shadow:
+        inset 0 0 7px white,
+        0 0 6px white,
+        0 0 13px #79c8ff,
+        0 0 22px #0d6bff !important;
+
     filter:
-        brightness(1.4)
-        drop-shadow(0 0 6px #ffffff)
-        drop-shadow(0 0 14px #79c8ff)
-        drop-shadow(0 0 24px #0d6bff) !important;
+        brightness(1.5)
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 14px #0d6bff) !important;
+}
+
+/* =========================================================
+   XBOX CENTER BUTTON
+   ========================================================= */
+
+.custom .quadrant {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    left: 347px;
+    top: 144px;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    z-index: 20;
 }
 
 /* =========================================================
@@ -364,22 +378,29 @@
 
 .custom .dpad {
     position: absolute;
+
     width: 110px;
     height: 111px;
+
     left: 210px;
     top: 300px;
+
     z-index: 20;
 }
 
 .custom .face {
     position: absolute;
+
     opacity: 0;
-    background: rgba(13,107,255,.85);
+
+    background:
+        rgba(13,107,255,.85);
 }
 
 .custom .face.up {
     width: 38px;
     height: 52px;
+
     left: 36px;
     top: 0;
 }
@@ -387,6 +408,7 @@
 .custom .face.down {
     width: 38px;
     height: 52px;
+
     left: 36px;
     bottom: 0;
 }
@@ -394,6 +416,7 @@
 .custom .face.left {
     width: 52px;
     height: 38px;
+
     left: 0;
     top: 36px;
 }
@@ -401,6 +424,7 @@
 .custom .face.right {
     width: 52px;
     height: 38px;
+
     right: 0;
     top: 36px;
 }
