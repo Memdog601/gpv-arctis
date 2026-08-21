@@ -1,0 +1,108 @@
+/* ============================================
+   ARCTIS GPV CONTROLLER SKIN
+   Black + Electric Blue
+   ============================================ */
+
+:root {
+    --arctis-blue: #3565ff;
+    --arctis-blue-light: #6f8cff;
+    --arctis-black: #05070d;
+    --arctis-dark: #0b1020;
+    --arctis-white: #f4f7ff;
+}
+
+/* Controller body */
+.controller,
+.gamepad,
+.controller-body,
+svg .controller,
+svg .body {
+    fill: var(--arctis-black) !important;
+    background: var(--arctis-black) !important;
+    stroke: var(--arctis-blue) !important;
+    stroke-width: 3px !important;
+
+    filter:
+        drop-shadow(0 0 5px #3565ff)
+        drop-shadow(0 0 14px rgba(53, 101, 255, 0.55));
+}
+
+/* Buttons */
+.button,
+.buttons,
+.face-button,
+svg .button,
+svg .buttons {
+    fill: var(--arctis-blue) !important;
+    stroke: var(--arctis-blue-light) !important;
+
+    filter: drop-shadow(0 0 5px #3565ff);
+}
+
+/* Pressed buttons */
+.button.pressed,
+.button.active,
+.pressed,
+.active {
+    fill: var(--arctis-white) !important;
+
+    filter:
+        drop-shadow(0 0 6px #ffffff)
+        drop-shadow(0 0 12px #3565ff) !important;
+}
+
+/* Analog sticks */
+.stick,
+.analog,
+.joystick,
+svg .stick {
+    fill: #10182c !important;
+    stroke: var(--arctis-blue) !important;
+    stroke-width: 3px !important;
+
+    filter: drop-shadow(0 0 5px #3565ff);
+}
+
+/* D-Pad */
+.dpad,
+.d-pad,
+svg .dpad {
+    fill: var(--arctis-blue) !important;
+    stroke: var(--arctis-blue-light) !important;
+}
+
+/* Triggers / bumpers */
+.trigger,
+.bumper,
+.shoulder,
+svg .trigger {
+    fill: var(--arctis-blue) !important;
+    stroke: var(--arctis-blue-light) !important;
+
+    filter: drop-shadow(0 0 5px #3565ff);
+}
+
+/* Text */
+.controller text,
+.gamepad text,
+svg text {
+    fill: var(--arctis-white) !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Optional Arctis-style blue glow */
+.controller::after,
+.gamepad::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(53, 101, 255, 0.18),
+            transparent 60%
+        );
+}
