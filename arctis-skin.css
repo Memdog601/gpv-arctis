@@ -232,28 +232,24 @@
     background: transparent !important;
 }
 
-/* Y */
-.custom .y {
-    left: 533px !important;
-    top: 152px !important;
-}
-
-/* X */
 .custom .x {
-    left: 486px !important;
-    top: 201px !important;
+    left: 500px !important;
+    top: 209px !important;
 }
 
-/* B */
-.custom .b {
-    left: 576px !important;
-    top: 201px !important;
-}
-
-/* A */
 .custom .a {
-    left: 531px !important;
-    top: 246px !important;
+    left: 548px !important;
+    top: 258px !important;
+}
+
+.custom .b {
+    left: 596px !important;
+    top: 209px !important;
+}
+
+.custom .y {
+    left: 551px !important;
+    top: 159px !important;
 }
 
 /* =========================================================
