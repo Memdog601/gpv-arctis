@@ -56,7 +56,6 @@
 .custom .trigger {
     width: 94px;
     height: 125px;
-
     opacity: 0;
 }
 
@@ -75,7 +74,7 @@
         linear-gradient(
             to bottom,
             rgba(63,140,255,.85),
-            rgba(13,107,255,.3)
+            rgba(13,107,255,.30)
         );
 
     filter:
@@ -100,7 +99,6 @@
 .custom .bumper {
     width: 180px;
     height: 68px;
-
     opacity: 0;
 }
 
@@ -118,7 +116,7 @@
     background: rgba(13,107,255,.75);
 
     filter:
-        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 8px #ffffff)
         drop-shadow(0 0 18px #0d6bff);
 }
 
@@ -137,17 +135,9 @@
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.15),
-            rgba(13,107,255,.20) 60%,
-            transparent 70%
-        );
-
-    filter:
-        drop-shadow(0 0 5px white)
-        drop-shadow(0 0 10px #0d6bff);
+    opacity: 0 !important;
+    background: transparent !important;
+    filter: none !important;
 }
 
 /* =========================================================
@@ -169,7 +159,9 @@
     width: 36px;
     height: 36px;
 
-    opacity: 0;
+    opacity: 0 !important;
+    background: transparent !important;
+    filter: none !important;
 }
 
 .custom .back {
@@ -182,7 +174,7 @@
 
 .custom .back.pressed,
 .custom .start.pressed {
-    opacity: .8;
+    opacity: .8 !important;
 
     border-radius: 50%;
 
@@ -192,11 +184,11 @@
             white 0%,
             #3f8cff 35%,
             #0d6bff 70%
-        );
+        ) !important;
 
     filter:
         drop-shadow(0 0 8px white)
-        drop-shadow(0 0 16px #0d6bff);
+        drop-shadow(0 0 16px #0d6bff) !important;
 }
 
 /* =========================================================
@@ -209,8 +201,8 @@
     width: 153px;
     height: 156px;
 
-    top: 192px;
-    left: 488px;
+    top: 184px;
+    left: 505px;
 }
 
 .custom .button {
@@ -220,7 +212,10 @@
     height: 48px;
 
     border-radius: 50%;
-    opacity: 0;
+
+    opacity: 0 !important;
+    background: transparent !important;
+    filter: none !important;
 
     transition:
         opacity .08s ease,
@@ -249,21 +244,21 @@
 }
 
 .custom .button.pressed {
-    opacity: .85;
+    opacity: .85 !important;
 
     background:
         radial-gradient(
             circle,
-            white 0%,
-            #3f8cff 35%,
-            #0d6bff 65%,
+            rgba(255,255,255,.95) 0%,
+            rgba(63,140,255,.90) 35%,
+            rgba(13,107,255,.70) 65%,
             transparent 72%
-        );
+        ) !important;
 
     filter:
         drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff)
-        drop-shadow(0 0 28px rgba(13,107,255,.8));
+        drop-shadow(0 0 28px rgba(13,107,255,.80)) !important;
 
     transform: scale(.95);
 }
@@ -278,7 +273,7 @@
     width: 385px;
     height: 210px;
 
-    top: 248px;
+    top: 244px;
     left: 132px;
 }
 
@@ -290,19 +285,12 @@
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(13,107,255,.05) 40%,
-            rgba(13,107,255,.40) 62%,
-            transparent 72%
-        );
-
-    filter:
-        drop-shadow(0 0 7px #0d6bff)
-        drop-shadow(0 0 14px rgba(13,107,255,.65));
+    opacity: 0 !important;
+    background: transparent !important;
+    filter: none !important;
 
     transition:
+        opacity .08s ease,
         filter .08s ease,
         transform .08s ease;
 }
@@ -313,16 +301,26 @@
 }
 
 .custom .stick.right {
-    top: 104px;
-    left: 296px;
+    top: 98px;
+    left: 286px;
 }
 
 .custom .stick.pressed {
+    opacity: .75 !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.15) 0%,
+            rgba(63,140,255,.35) 45%,
+            rgba(13,107,255,.45) 65%,
+            transparent 75%
+        ) !important;
+
     filter:
-        brightness(1.7)
-        drop-shadow(0 0 10px white)
-        drop-shadow(0 0 20px #0d6bff)
-        drop-shadow(0 0 30px rgba(13,107,255,.85));
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px #0d6bff)
+        drop-shadow(0 0 28px rgba(13,107,255,.80)) !important;
 }
 
 /* =========================================================
@@ -390,17 +388,19 @@
     filter:
         drop-shadow(0 0 8px white)
         drop-shadow(0 0 16px #0d6bff)
-        drop-shadow(0 0 24px rgba(13,107,255,.8));
+        drop-shadow(0 0 24px rgba(13,107,255,.80));
 }
 
 /* =========================================================
-   EXTRA GLOW
+   LAYERING
    ========================================================= */
 
 .custom .sticks,
 .custom .abxy,
 .custom .dpad,
 .custom .quadrant,
-.custom .arrows {
+.custom .arrows,
+.custom .triggers,
+.custom .bumpers {
     z-index: 10;
 }
