@@ -9,6 +9,8 @@
 
 /* =========================================================
    CONTROLLER
+   IMPORTANT: DO NOT SET position, transform, or margin HERE
+   GPV handles placement itself.
    ========================================================= */
 
 .controller.custom {
@@ -22,16 +24,9 @@
     background-size: 760px auto !important;
     background-position: center 12px !important;
 
-    position: relative !important;
-
-    /* Move entire controller down without changing GPV layout */
-    transform: translateY(300px) !important;
-
     filter:
         drop-shadow(0 0 8px #0d6bff)
         drop-shadow(0 0 20px rgba(13,107,255,.65));
-
-    overflow: visible !important;
 }
 
 /* =========================================================
@@ -48,6 +43,7 @@
 
 .custom .triggers {
     position: absolute;
+
     width: 470px;
     height: 125px;
 
@@ -125,7 +121,7 @@
 }
 
 /* =========================================================
-   XBOX BUTTON
+   XBOX CENTER BUTTON
    ========================================================= */
 
 .custom .quadrant {
@@ -137,8 +133,9 @@
     top: 252px;
     left: 356px;
 
-    opacity: 0 !important;
+    border-radius: 50%;
 
+    opacity: 0 !important;
     background: transparent !important;
     filter: none !important;
 }
@@ -185,7 +182,7 @@
     background:
         radial-gradient(
             circle,
-            white,
+            white 0%,
             #3f8cff 40%,
             #0d6bff 70%
         ) !important;
@@ -221,6 +218,10 @@
 
     background: transparent !important;
     filter: none !important;
+
+    transition:
+        opacity .08s ease,
+        filter .08s ease;
 }
 
 .custom .a {
@@ -258,11 +259,12 @@
     filter:
         drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff)
-        drop-shadow(0 0 28px rgba(13,107,255,.8)) !important;
+        drop-shadow(0 0 28px rgba(13,107,255,.80)) !important;
 }
 
 /* =========================================================
    STICKS
+   GPV applies movement transforms directly to these.
    ========================================================= */
 
 .custom .sticks {
@@ -283,40 +285,51 @@
 
     border-radius: 50%;
 
-    opacity: 0 !important;
+    /* subtle normally so movement remains visible */
+    opacity: .18;
 
-    background: transparent !important;
-    filter: none !important;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.05) 0%,
+            rgba(63,140,255,.14) 50%,
+            rgba(13,107,255,.18) 67%,
+            transparent 74%
+        );
+
+    filter:
+        drop-shadow(0 0 4px rgba(13,107,255,.5));
 }
 
-/* LEFT */
+/* LEFT STICK */
 .custom .stick.left {
     top: 6px;
     left: 8px;
 }
 
-/* RIGHT */
+/* RIGHT STICK */
 .custom .stick.right {
     top: 98px;
     left: 286px;
 }
 
+/* STICK CLICK */
 .custom .stick.pressed {
-    opacity: .75 !important;
+    opacity: .8 !important;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.18),
-            rgba(63,140,255,.40) 45%,
-            rgba(13,107,255,.50) 65%,
+            rgba(255,255,255,.25) 0%,
+            rgba(63,140,255,.45) 45%,
+            rgba(13,107,255,.55) 65%,
             transparent 75%
         ) !important;
 
     filter:
         drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff)
-        drop-shadow(0 0 28px rgba(13,107,255,.80)) !important;
+        drop-shadow(0 0 28px rgba(13,107,255,.8)) !important;
 }
 
 /* =========================================================
