@@ -1,108 +1,168 @@
-/* ============================================
-   ARCTIS GPV CONTROLLER SKIN
-   Black + Electric Blue
-   ============================================ */
+/*
+ * ARCTIS Xbox One - Gamepad Viewer
+ * Black + Electric Blue
+ * Designed for GPV editcss=
+ */
 
 :root {
-    --arctis-blue: #3565ff;
-    --arctis-blue-light: #6f8cff;
-    --arctis-black: #05070d;
-    --arctis-dark: #0b1020;
-    --arctis-white: #f4f7ff;
+    --arctis-blue: #246BFD;
+    --arctis-bright: #4D8DFF;
+    --arctis-dark: #05070c;
 }
 
-/* Controller body */
-.controller,
-.gamepad,
-.controller-body,
-svg .controller,
-svg .body {
-    fill: var(--arctis-black) !important;
-    background: var(--arctis-black) !important;
-    stroke: var(--arctis-blue) !important;
-    stroke-width: 3px !important;
+/* ================================
+   WHOLE CONTROLLER
+   ================================ */
 
+.controller.edit {
     filter:
-        drop-shadow(0 0 5px #3565ff)
-        drop-shadow(0 0 14px rgba(53, 101, 255, 0.55));
+        brightness(0.72)
+        contrast(1.35)
+        drop-shadow(0 0 5px #246BFD)
+        drop-shadow(0 0 14px rgba(36,107,253,.60)) !important;
 }
 
-/* Buttons */
-.button,
-.buttons,
-.face-button,
-svg .button,
-svg .buttons {
-    fill: var(--arctis-blue) !important;
-    stroke: var(--arctis-blue-light) !important;
+/* ================================
+   ARCTIS LOGO
+   ================================ */
 
-    filter: drop-shadow(0 0 5px #3565ff);
-}
-
-/* Pressed buttons */
-.button.pressed,
-.button.active,
-.pressed,
-.active {
-    fill: var(--arctis-white) !important;
-
-    filter:
-        drop-shadow(0 0 6px #ffffff)
-        drop-shadow(0 0 12px #3565ff) !important;
-}
-
-/* Analog sticks */
-.stick,
-.analog,
-.joystick,
-svg .stick {
-    fill: #10182c !important;
-    stroke: var(--arctis-blue) !important;
-    stroke-width: 3px !important;
-
-    filter: drop-shadow(0 0 5px #3565ff);
-}
-
-/* D-Pad */
-.dpad,
-.d-pad,
-svg .dpad {
-    fill: var(--arctis-blue) !important;
-    stroke: var(--arctis-blue-light) !important;
-}
-
-/* Triggers / bumpers */
-.trigger,
-.bumper,
-.shoulder,
-svg .trigger {
-    fill: var(--arctis-blue) !important;
-    stroke: var(--arctis-blue-light) !important;
-
-    filter: drop-shadow(0 0 5px #3565ff);
-}
-
-/* Text */
-.controller text,
-.gamepad text,
-svg text {
-    fill: var(--arctis-white) !important;
-    font-family: Arial, sans-serif !important;
-    font-weight: 700 !important;
-}
-
-/* Optional Arctis-style blue glow */
-.controller::after,
-.gamepad::after {
+.controller.edit::after {
     content: "";
     position: absolute;
-    inset: 0;
+
+    width: 105px;
+    height: 105px;
+
+    left: 50%;
+    top: 54%;
+
+    transform: translate(-50%, -50%);
+
+    background-image:
+        url("https://memdog601.github.io/gpv-arctis/arctis-logo.png");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
     pointer-events: none;
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(53, 101, 255, 0.18),
-            transparent 60%
-        );
+    filter:
+        drop-shadow(0 0 3px #246BFD)
+        drop-shadow(0 0 9px #246BFD);
+
+    z-index: 50;
+}
+
+/* ================================
+   ABXY
+   ================================ */
+
+.edit .abxy .button {
+    filter:
+        brightness(.8)
+        saturate(2)
+        drop-shadow(0 0 3px #246BFD) !important;
+}
+
+.edit .abxy .button.pressed {
+    filter:
+        brightness(1.8)
+        saturate(4)
+        drop-shadow(0 0 6px #246BFD)
+        drop-shadow(0 0 12px #246BFD) !important;
+}
+
+/* ================================
+   ANALOG STICKS
+   ================================ */
+
+.edit .stick {
+    filter:
+        brightness(.65)
+        saturate(2)
+        drop-shadow(0 0 4px #246BFD) !important;
+
+    border-radius: 50%;
+}
+
+.edit .stick.pressed {
+    filter:
+        brightness(1.5)
+        saturate(4)
+        drop-shadow(0 0 7px #246BFD)
+        drop-shadow(0 0 12px #246BFD) !important;
+}
+
+/* ================================
+   DPAD
+   ================================ */
+
+.edit .dpad {
+    filter:
+        brightness(.70)
+        saturate(2)
+        drop-shadow(0 0 4px #246BFD) !important;
+}
+
+.edit .dpad .pressed {
+    filter:
+        brightness(1.7)
+        saturate(4)
+        drop-shadow(0 0 8px #246BFD) !important;
+}
+
+/* ================================
+   BUMPERS
+   ================================ */
+
+.edit .bumper {
+    filter:
+        brightness(.65)
+        saturate(2)
+        drop-shadow(0 0 3px #246BFD) !important;
+}
+
+.edit .bumper.pressed {
+    filter:
+        brightness(1.6)
+        saturate(4)
+        drop-shadow(0 0 9px #246BFD) !important;
+}
+
+/* ================================
+   TRIGGERS
+   ================================ */
+
+.edit .trigger {
+    filter:
+        brightness(.70)
+        saturate(2)
+        drop-shadow(0 0 4px #246BFD) !important;
+}
+
+.edit .trigger.pressed {
+    filter:
+        brightness(1.7)
+        saturate(4)
+        drop-shadow(0 0 9px #246BFD) !important;
+}
+
+/* ================================
+   START / SELECT
+   ================================ */
+
+.edit .start,
+.edit .back {
+    filter:
+        brightness(.75)
+        saturate(2)
+        drop-shadow(0 0 3px #246BFD) !important;
+}
+
+.edit .start.pressed,
+.edit .back.pressed {
+    filter:
+        brightness(1.7)
+        drop-shadow(0 0 8px #246BFD) !important;
 }
