@@ -38,22 +38,17 @@
 
 .custom .triggers {
     position: absolute;
-
     width: 500px;
     height: 115px;
-
     left: 125px;
     top: 0;
-
     z-index: 30 !important;
 }
 
 .custom .trigger {
     width: 95px;
     height: 115px;
-
     opacity: 1;
-
     border-radius: 50px 50px 20px 20px;
 
     background:
@@ -89,20 +84,16 @@
 
 .custom .bumpers {
     position: absolute;
-
     width: 550px;
     height: 55px;
-
     left: 100px;
     top: 105px;
-
     z-index: 25 !important;
 }
 
 .custom .bumper {
     width: 165px;
     height: 55px;
-
     opacity: 0;
 }
 
@@ -135,32 +126,21 @@
 
 .custom .sticks {
     position: absolute;
-
     width: 750px;
     height: 630px;
-
     left: 0;
     top: 0;
-
     z-index: 40 !important;
 }
 
 .custom .stick {
     position: absolute !important;
-
-    /*
-       Smaller than before so the glow stays
-       inside the artwork's stick ring.
-    */
     width: 72px !important;
     height: 72px !important;
-
     border-radius: 50% !important;
-
     opacity: .88 !important;
 
-    border:
-        2px solid rgba(121,200,255,.80) !important;
+    border: 2px solid rgba(121,200,255,.80) !important;
 
     background:
         radial-gradient(
@@ -185,11 +165,6 @@
         drop-shadow(0 0 10px #0d6bff) !important;
 }
 
-/*
-   Re-centered after changing stick overlay
-   from 86px -> 72px.
-*/
-
 .custom .stick.left {
     left: 135px !important;
     top: 197px !important;
@@ -206,9 +181,7 @@
 
 .custom .stick.pressed {
     opacity: 1 !important;
-
-    border:
-        3px solid #ffffff !important;
+    border: 3px solid #ffffff !important;
 
     background:
         radial-gradient(
@@ -238,59 +211,49 @@
 
 /* =========================================================
    ABXY
+   FIXED ALIGNMENT
    ========================================================= */
 
 .custom .abxy {
     position: absolute;
-
     width: 750px;
     height: 630px;
-
     left: 0;
     top: 0;
-
     z-index: 40 !important;
 }
 
 .custom .button {
     position: absolute !important;
-
-    /*
-       Slightly smaller so pressed glow matches
-       the printed circles more closely.
-    */
-    width: 42px !important;
-    height: 42px !important;
-
+    width: 44px !important;
+    height: 44px !important;
     border-radius: 50% !important;
-
     opacity: 0 !important;
-
     background: transparent !important;
 }
 
 /* Y */
 .custom .y {
-    left: 529px !important;
-    top: 148px !important;
+    left: 533px !important;
+    top: 152px !important;
 }
 
 /* X */
 .custom .x {
-    left: 482px !important;
-    top: 197px !important;
+    left: 486px !important;
+    top: 201px !important;
 }
 
 /* B */
 .custom .b {
-    left: 572px !important;
-    top: 197px !important;
+    left: 576px !important;
+    top: 201px !important;
 }
 
 /* A */
 .custom .a {
-    left: 527px !important;
-    top: 242px !important;
+    left: 531px !important;
+    top: 246px !important;
 }
 
 /* =========================================================
@@ -299,9 +262,7 @@
 
 .custom .button.pressed {
     opacity: 1 !important;
-
-    border:
-        2px solid rgba(255,255,255,.95) !important;
+    border: 2px solid rgba(255,255,255,.95) !important;
 
     background:
         radial-gradient(
@@ -332,17 +293,12 @@
 
 .custom .quadrant {
     position: absolute;
-
     width: 55px;
     height: 55px;
-
     left: 347px;
     top: 144px;
-
     border-radius: 50%;
-
     opacity: 0;
-
     z-index: 20;
 }
 
@@ -352,25 +308,19 @@
 
 .custom .arrows {
     position: absolute;
-
     width: 750px;
     height: 630px;
-
     left: 0;
     top: 0;
-
     z-index: 20;
 }
 
 .custom .back,
 .custom .start {
     position: absolute;
-
     width: 30px;
     height: 30px;
-
     opacity: 0;
-
     border-radius: 50%;
 }
 
@@ -409,29 +359,22 @@
 
 .custom .dpad {
     position: absolute;
-
     width: 110px;
     height: 111px;
-
     left: 210px;
     top: 300px;
-
     z-index: 20;
 }
 
 .custom .face {
     position: absolute;
-
     opacity: 0;
-
-    background:
-        rgba(13,107,255,.85);
+    background: rgba(13,107,255,.85);
 }
 
 .custom .face.up {
     width: 38px;
     height: 52px;
-
     left: 36px;
     top: 0;
 }
@@ -439,7 +382,6 @@
 .custom .face.down {
     width: 38px;
     height: 52px;
-
     left: 36px;
     bottom: 0;
 }
@@ -447,7 +389,6 @@
 .custom .face.left {
     width: 52px;
     height: 38px;
-
     left: 0;
     top: 36px;
 }
@@ -455,7 +396,6 @@
 .custom .face.right {
     width: 52px;
     height: 38px;
-
     right: 0;
     top: 36px;
 }
