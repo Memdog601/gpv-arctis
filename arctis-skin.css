@@ -304,49 +304,58 @@
 
 .custom .arrows {
     position: absolute;
-    width: 750px;
-    height: 630px;
+    width: 0;
+    height: 0;
     left: 0;
     top: 0;
-    z-index: 20;
+    z-index: 20 !important;
 }
 
 .custom .back,
 .custom .start {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    opacity: 0;
+    width: 36px;
+    height: 36px;
+
+    opacity: 0 !important;
+    background: transparent !important;
+    filter: none !important;
+    float: none !important;
     border-radius: 50%;
 }
 
+/* Back / View */
 .custom .back {
-    left: 276px;
-    top: 190px;
+    left: 289px !important;
+    top: 216px !important;
 }
 
+/* Start / Menu */
 .custom .start {
-    left: 396px;
-    top: 190px;
+    left: 423px !important;
+    top: 215px !important;
 }
 
 .custom .back.pressed,
 .custom .start.pressed {
-    opacity: 1 !important;
+    opacity: .95 !important;
 
     background:
         radial-gradient(
             circle,
-            white,
-            #79c8ff 25%,
-            #3f8cff 50%,
-            #0d6bff 72%,
-            transparent 80%
+            #ffffff 0%,
+            #ffffff 10%,
+            #79c8ff 28%,
+            #3f8cff 52%,
+            #0d6bff 76%,
+            transparent 82%
         ) !important;
 
     filter:
-        drop-shadow(0 0 6px white)
-        drop-shadow(0 0 14px #0d6bff);
+        brightness(1.4)
+        drop-shadow(0 0 6px #ffffff)
+        drop-shadow(0 0 14px #79c8ff)
+        drop-shadow(0 0 24px #0d6bff) !important;
 }
 
 /* =========================================================
