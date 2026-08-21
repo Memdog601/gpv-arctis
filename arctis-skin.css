@@ -362,8 +362,8 @@
     width: 55px;
     height: 55px;
 
-    left: 347px;
-    top: 144px;
+    left: 346px !important;
+    top: 143px !important;
 
     border-radius: 50%;
 
@@ -372,6 +372,31 @@
     z-index: 20;
 }
 
+.custom .quadrant.pressed {
+    opacity: 1 !important;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #dff5ff 12%,
+            #79c8ff 28%,
+            #3f8cff 50%,
+            #0d6bff 72%,
+            transparent 82%
+        ) !important;
+
+    box-shadow:
+        inset 0 0 8px #ffffff,
+        0 0 6px #ffffff,
+        0 0 14px #79c8ff,
+        0 0 24px #0d6bff !important;
+
+    filter:
+        brightness(1.6)
+        drop-shadow(0 0 6px #ffffff)
+        drop-shadow(0 0 16px #0d6bff) !important;
+}
 /* =========================================================
    DPAD
    ========================================================= */
