@@ -37,7 +37,6 @@
 
 /* =========================================================
    TRIGGERS
-   GPV uses data-value / opacity for analog triggers
    ========================================================= */
 
 .custom .triggers {
@@ -290,19 +289,24 @@
 
     border-radius: 50%;
 
-    opacity: .12;
+    opacity: .08;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.04),
-            rgba(63,140,255,.12) 50%,
-            rgba(13,107,255,.18) 68%,
+            rgba(255,255,255,.03) 0%,
+            rgba(63,140,255,.08) 45%,
+            rgba(13,107,255,.12) 65%,
             transparent 75%
         );
 
     filter:
-        drop-shadow(0 0 4px rgba(13,107,255,.45));
+        drop-shadow(0 0 3px rgba(13,107,255,.35));
+
+    transition:
+        opacity .08s ease,
+        filter .08s ease,
+        background .08s ease;
 }
 
 .custom .stick.left {
@@ -315,22 +319,28 @@
     left: 286px;
 }
 
+/* MUCH BRIGHTER WHEN STICK IS CLICKED */
 .custom .stick.pressed {
-    opacity: .8 !important;
+    opacity: 1 !important;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.22),
-            rgba(63,140,255,.45) 45%,
-            rgba(13,107,255,.55) 65%,
-            transparent 75%
+            rgba(255,255,255,1) 0%,
+            rgba(180,215,255,.95) 12%,
+            rgba(63,140,255,.95) 32%,
+            rgba(13,107,255,.85) 58%,
+            rgba(0,60,220,.55) 72%,
+            transparent 78%
         ) !important;
 
     filter:
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff)
-        drop-shadow(0 0 28px rgba(13,107,255,.8)) !important;
+        brightness(1.8)
+        drop-shadow(0 0 6px #ffffff)
+        drop-shadow(0 0 12px #ffffff)
+        drop-shadow(0 0 20px #3f8cff)
+        drop-shadow(0 0 34px #0d6bff)
+        drop-shadow(0 0 48px rgba(13,107,255,.95)) !important;
 }
 
 /* =========================================================
