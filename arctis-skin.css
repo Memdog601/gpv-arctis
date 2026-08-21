@@ -9,11 +9,8 @@
     background-image: url("https://memdog601.github.io/gpv-arctis/controller-art.png");
     background-repeat: no-repeat;
 
-    /* Slightly larger, but still safely inside the GPV canvas */
-    background-size: 790px auto;
-
-    /* Move it down just a little */
-    background-position: center 8px;
+    background-size: 760px auto;
+    background-position: center 12px;
 
     filter:
         drop-shadow(0 0 8px #0d6bff)
