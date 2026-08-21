@@ -1,25 +1,28 @@
 /* =========================================================
-   ARCTIS XBOX ONE - FULL CUSTOM SKIN
+   ARCTIS XBOX ONE - GPV FULL CUSTOM SKIN
    ========================================================= */
 
 .controller.custom {
-    width: 750px !important;
-    height: 630px !important;
+    width: 750px;
+    height: 630px;
 
     background:
         url("https://memdog601.github.io/gpv-arctis/controller-art.png")
-        center / contain no-repeat !important;
+        center center / 750px 630px no-repeat;
 
     filter:
         drop-shadow(0 0 8px #0d6bff)
         drop-shadow(0 0 20px rgba(13,107,255,.65));
-
-    position: relative;
 }
 
-/* =========================
+/* Disconnect */
+.custom.disconnected div {
+    display: none;
+}
+
+/* =========================================================
    TRIGGERS
-   ========================= */
+   ========================================================= */
 
 .custom .triggers {
     width: 446px;
@@ -44,14 +47,14 @@
 }
 
 .custom .trigger.pressed {
-    opacity: .65;
+    opacity: .55;
     background: #0d6bff;
     filter: drop-shadow(0 0 15px #0d6bff);
 }
 
-/* =========================
+/* =========================================================
    BUMPERS
-   ========================= */
+   ========================================================= */
 
 .custom .bumpers {
     position: absolute;
@@ -81,42 +84,158 @@
     filter: drop-shadow(0 0 15px #0d6bff);
 }
 
-/* =========================
+/* =========================================================
+   XBOX CENTER
+   ========================================================= */
+
+.custom .quadrant {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 258px;
+    left: 354px;
+
+    border-radius: 50%;
+    background: rgba(13,107,255,.18);
+
+    filter:
+        drop-shadow(0 0 5px #fff)
+        drop-shadow(0 0 10px #0d6bff);
+}
+
+/* =========================================================
+   VIEW / MENU
+   ========================================================= */
+
+.custom .arrows {
+    position: absolute;
+    width: 141px;
+    height: 33px;
+    top: 264px;
+    left: 306px;
+}
+
+.custom .back,
+.custom .start {
+    width: 33px;
+    height: 33px;
+    opacity: 0;
+}
+
+.custom .back {
+    float: left;
+}
+
+.custom .start {
+    float: right;
+}
+
+.custom .back.pressed,
+.custom .start.pressed {
+    opacity: .75;
+    border-radius: 50%;
+    background: #0d6bff;
+
+    filter:
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 15px #0d6bff);
+}
+
+/* =========================================================
+   ABXY
+   ========================================================= */
+
+.custom .abxy {
+    position: absolute;
+    width: 153px;
+    height: 156px;
+    top: 192px;
+    left: 488px;
+}
+
+.custom .button {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.custom .a {
+    top: 108px;
+    left: 55px;
+}
+
+.custom .b {
+    top: 58px;
+    right: 0;
+}
+
+.custom .x {
+    top: 58px;
+    left: 4px;
+}
+
+.custom .y {
+    left: 55px;
+    top: 7px;
+}
+
+.custom .button.pressed {
+    opacity: .8;
+
+    background:
+        radial-gradient(
+            circle,
+            white 0%,
+            #3f8cff 35%,
+            #0d6bff 65%,
+            transparent 70%
+        );
+
+    filter:
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px #0d6bff);
+}
+
+/* =========================================================
    STICKS
-   ========================= */
+   ========================================================= */
 
 .custom .sticks {
     position: absolute;
-    width: 367px;
-    height: 105px;
-    left: 171px;
-    top: 282px;
+    width: 371px;
+    height: 196px;
+    top: 239px;
+    left: 144px;
 }
 
 .custom .stick {
     position: absolute;
     width: 83px;
     height: 83px;
-
     border-radius: 50%;
 
     background:
-        radial-gradient(circle,
-        rgba(13,107,255,.3),
-        rgba(0,0,0,.05) 60%,
-        transparent 70%);
+        radial-gradient(
+            circle,
+            rgba(13,107,255,.05) 45%,
+            rgba(13,107,255,.45) 63%,
+            transparent 70%
+        );
 
     filter:
-        drop-shadow(0 0 8px #0d6bff);
+        drop-shadow(0 0 7px #0d6bff);
 }
 
 .custom .stick.left {
+    top: 0;
     left: 0;
 }
 
 .custom .stick.right {
-    right: 0;
-    top: 105px;
+    top: 113px;
+    left: 288px;
 }
 
 .custom .stick.pressed {
@@ -126,155 +245,56 @@
         drop-shadow(0 0 20px #0d6bff);
 }
 
-/* =========================
-   ABXY
-   ========================= */
-
-.custom .abxy {
-    position: absolute;
-    width: 170px;
-    height: 170px;
-
-    left: 485px;
-    top: 225px;
-}
-
-.custom .button {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-
-    border-radius: 50%;
-    opacity: 0;
-}
-
-.custom .button.pressed {
-    opacity: .65;
-
-    background: #0d6bff;
-
-    filter:
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff);
-}
-
-.custom .button.a {
-    left: 58px;
-    top: 105px;
-}
-
-.custom .button.b {
-    left: 105px;
-    top: 58px;
-}
-
-.custom .button.x {
-    left: 10px;
-    top: 58px;
-}
-
-.custom .button.y {
-    left: 58px;
-    top: 10px;
-}
-
-/* =========================
+/* =========================================================
    DPAD
-   ========================= */
+   ========================================================= */
 
 .custom .dpad {
     position: absolute;
-
     width: 110px;
-    height: 110px;
-
+    height: 111px;
+    top: 345px;
     left: 223px;
-    top: 367px;
 }
 
 .custom .face {
     position: absolute;
-    width: 42px;
-    height: 42px;
-
     opacity: 0;
-}
-
-.custom .face.pressed {
-    opacity: .7;
-
     background: #0d6bff;
-
-    filter:
-        drop-shadow(0 0 12px #0d6bff);
 }
 
 .custom .face.up {
-    left: 34px;
+    width: 38px;
+    height: 52px;
+    left: 36px;
     top: 0;
 }
 
 .custom .face.down {
-    left: 34px;
+    width: 38px;
+    height: 52px;
+    left: 36px;
     bottom: 0;
 }
 
 .custom .face.left {
+    width: 52px;
+    height: 38px;
     left: 0;
-    top: 34px;
+    top: 36px;
 }
 
 .custom .face.right {
+    width: 52px;
+    height: 38px;
     right: 0;
-    top: 34px;
+    top: 36px;
 }
 
-/* =========================
-   CENTER BUTTONS
-   ========================= */
-
-.custom .back {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-
-    left: 324px;
-    top: 234px;
-
-    opacity: 0;
-}
-
-.custom .start {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-
-    left: 391px;
-    top: 234px;
-
-    opacity: 0;
-}
-
-.custom .back.pressed,
-.custom .start.pressed {
-    opacity: .8;
-
-    background: #0d6bff;
-
-    border-radius: 50%;
+.custom .face.pressed {
+    opacity: .6;
 
     filter:
-        drop-shadow(0 0 12px #0d6bff);
-}
-
-/* =========================
-   DISCONNECTED
-   ========================= */
-
-.custom.disconnected {
-    filter: grayscale(1) brightness(.5);
-}
-
-.custom.disconnected div {
-    display: none;
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 16px #0d6bff);
 }
