@@ -9,8 +9,6 @@
 
 /* =========================================================
    CONTROLLER
-   IMPORTANT: DO NOT SET position, transform, or margin HERE
-   GPV handles placement itself.
    ========================================================= */
 
 .controller.custom {
@@ -39,57 +37,52 @@
 
 /* =========================================================
    TRIGGERS
+   GPV uses data-value / opacity for analog triggers
    ========================================================= */
 
 .custom .triggers {
     position: absolute;
-    width: 470px;
-    height: 125px;
+    width: 500px;
+    height: 115px;
 
-    left: 140px;
+    left: 125px;
     top: 0;
 
     z-index: 30 !important;
 }
 
 .custom .trigger {
-    position: absolute;
+    width: 95px;
+    height: 115px;
 
-    width: 100px;
-    height: 125px;
+    opacity: 1;
 
-    top: 0;
-
-    opacity: 0;
-    border-radius: 28px 28px 12px 12px;
+    border-radius: 50px 50px 20px 20px;
 
     background:
         linear-gradient(
             to bottom,
             rgba(255,255,255,.95) 0%,
-            rgba(63,140,255,.95) 20%,
-            rgba(13,107,255,.75) 60%,
+            rgba(63,140,255,.95) 18%,
+            rgba(13,107,255,.75) 55%,
             rgba(13,107,255,.15) 100%
         );
 
     filter:
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff);
+        drop-shadow(0 0 7px white)
+        drop-shadow(0 0 17px #0d6bff);
+}
+
+.custom .trigger[data-value="0"] {
+    opacity: 0 !important;
 }
 
 .custom .trigger.left {
-    left: 0;
+    float: left;
 }
 
 .custom .trigger.right {
-    right: 0;
-}
-
-/* GPV may use pressed OR active */
-.custom .trigger.pressed,
-.custom .trigger.active,
-.custom .trigger[data-pressed="true"] {
-    opacity: .85 !important;
+    float: right;
 }
 
 /* =========================================================
@@ -98,12 +91,13 @@
 
 .custom .bumpers {
     position: absolute;
-
     width: 560px;
     height: 68px;
 
     left: 95px;
-    top: 118px;
+    top: 115px;
+
+    z-index: 25 !important;
 }
 
 .custom .bumper {
@@ -122,17 +116,22 @@
 }
 
 .custom .bumper.pressed {
-    opacity: .55;
+    opacity: .65;
 
-    background: rgba(13,107,255,.75);
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,.75),
+            rgba(13,107,255,.65)
+        );
 
     filter:
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px #0d6bff);
+        drop-shadow(0 0 7px white)
+        drop-shadow(0 0 16px #0d6bff);
 }
 
 /* =========================================================
-   XBOX CENTER BUTTON
+   XBOX CENTER
    ========================================================= */
 
 .custom .quadrant {
@@ -143,8 +142,6 @@
 
     top: 252px;
     left: 356px;
-
-    border-radius: 50%;
 
     opacity: 0 !important;
     background: transparent !important;
@@ -163,6 +160,8 @@
 
     top: 260px;
     left: 302px;
+
+    z-index: 20;
 }
 
 .custom .back,
@@ -171,9 +170,7 @@
     height: 36px;
 
     opacity: 0 !important;
-
     background: transparent !important;
-    filter: none !important;
 }
 
 .custom .back {
@@ -215,6 +212,8 @@
 
     top: 184px;
     left: 505px;
+
+    z-index: 20;
 }
 
 .custom .button {
@@ -226,13 +225,7 @@
     border-radius: 50%;
 
     opacity: 0 !important;
-
     background: transparent !important;
-    filter: none !important;
-
-    transition:
-        opacity .08s ease,
-        filter .08s ease;
 }
 
 .custom .a {
@@ -270,12 +263,11 @@
     filter:
         drop-shadow(0 0 8px white)
         drop-shadow(0 0 18px #0d6bff)
-        drop-shadow(0 0 28px rgba(13,107,255,.80)) !important;
+        drop-shadow(0 0 28px rgba(13,107,255,.8)) !important;
 }
 
 /* =========================================================
    STICKS
-   GPV applies movement transforms directly to these.
    ========================================================= */
 
 .custom .sticks {
@@ -286,6 +278,8 @@
 
     top: 244px;
     left: 132px;
+
+    z-index: 20;
 }
 
 .custom .stick {
@@ -296,42 +290,38 @@
 
     border-radius: 50%;
 
-    /* subtle normally so movement remains visible */
-    opacity: .18;
+    opacity: .12;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.05) 0%,
-            rgba(63,140,255,.14) 50%,
-            rgba(13,107,255,.18) 67%,
-            transparent 74%
+            rgba(255,255,255,.04),
+            rgba(63,140,255,.12) 50%,
+            rgba(13,107,255,.18) 68%,
+            transparent 75%
         );
 
     filter:
-        drop-shadow(0 0 4px rgba(13,107,255,.5));
+        drop-shadow(0 0 4px rgba(13,107,255,.45));
 }
 
-/* LEFT STICK */
 .custom .stick.left {
     top: 6px;
     left: 8px;
 }
 
-/* RIGHT STICK */
 .custom .stick.right {
     top: 98px;
     left: 286px;
 }
 
-/* STICK CLICK */
 .custom .stick.pressed {
     opacity: .8 !important;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.25) 0%,
+            rgba(255,255,255,.22),
             rgba(63,140,255,.45) 45%,
             rgba(13,107,255,.55) 65%,
             transparent 75%
@@ -355,6 +345,8 @@
 
     top: 345px;
     left: 223px;
+
+    z-index: 20;
 }
 
 .custom .face {
@@ -403,18 +395,4 @@
     filter:
         drop-shadow(0 0 8px white)
         drop-shadow(0 0 16px #0d6bff);
-}
-
-/* =========================================================
-   LAYERS
-   ========================================================= */
-
-.custom .triggers,
-.custom .bumpers,
-.custom .quadrant,
-.custom .arrows,
-.custom .abxy,
-.custom .sticks,
-.custom .dpad {
-    z-index: 20 !important;
 }
